@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/index.html" class="hover:text-brand-ink transition">Home</a>
+        <a href="/catalog" class="hover:text-brand-ink transition">Workflow Kits</a>
+        <a href="/about" class="hover:text-brand-ink transition">About</a>
+        <a href="/faq" class="hover:text-brand-ink transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="/checkout?item=all-access" class="bg-brand-ink text-brand-cream hover:bg-brand-ink/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Get All-Access</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 404 Error Content -->
+  <main class="max-w-md mx-auto px-6 py-20 flex-grow flex flex-col items-center justify-center text-center space-y-6">
+    <div class="w-24 h-24 rounded-full bg-brand-sand/50 flex items-center justify-center text-4xl border border-brand-border">
+      🧐
+    </div>
+    
+    <div class="space-y-2">
+      <h1 class="text-4xl font-extrabold text-brand-ink tracking-tight">Page Not Found</h1>
+      <p class="text-sm text-brand-muted leading-relaxed">
+        The page you are looking for doesn't exist or has been moved to another location. Let's get you back on track!
+      </p>
+    </div>
+
+    <div class="pt-4 flex flex-col sm:flex-row gap-4 w-full justify-center">
+      <a href="/index.html" class="bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-3 px-6 rounded-xl text-sm transition">
+        Go to Homepage
+      </a>
+      <a href="/catalog" class="bg-brand-sand border border-brand-border hover:bg-brand-border/40 text-brand-ink font-bold py-3 px-6 rounded-xl text-sm transition">
+        Browse Workflow Kits
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <p class="text-[10px] text-brand-muted">
+        &copy; 2026 TinyOps. All rights reserved. 404 Error Screen.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
