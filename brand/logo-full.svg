@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="220" height="64" fill="none">
+  <!-- Group for the icon -->
+  <g transform="translate(8, 8)">
+    <!-- Soft, premium rounded squircle container -->
+    <rect width="48" height="48" rx="12" fill="#18181B"/>
+    
+    <!-- Stylized modern gear/network outer ring -->
+    <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+    <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Gear Teeth / Node Dots (8-point symmetry) -->
+    <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+    <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+    <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+    <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+    
+    <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+    <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+    <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+    <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+
+    <!-- The AI/Automation Magic Spark (✦) in the center -->
+    <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+  </g>
+
+  <!-- Wordmark Text -->
+  <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+  <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+</svg>

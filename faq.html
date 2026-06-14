@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/index.html" class="hover:text-brand-ink transition">Home</a>
+        <a href="/catalog" class="hover:text-brand-ink transition">Workflow Kits</a>
+        <a href="/about" class="hover:text-brand-ink transition">About</a>
+        <a href="/faq" class="text-brand-ink transition font-bold">FAQ</a>
+        <a href="/catalog#bundle" class="text-brand-indigo hover:text-brand-indigo/80 transition font-semibold">★ All-Access Bundle</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="flex items-center space-x-4">
+        <a href="/checkout?item=all-access" class="bg-brand-ink text-brand-cream hover:bg-brand-ink/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Get All-Access</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ Content -->
+  <main class="max-w-4xl mx-auto px-6 py-16 flex-grow space-y-12">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl font-extrabold text-brand-ink tracking-tight">Frequently Asked Questions</h1>
+      <p class="text-lg text-brand-muted max-w-2xl mx-auto">
+        Got questions about our pre-assembled AI workflow kits? Find answers to our most common queries below.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion Grid -->
+    <div class="space-y-6 max-w-3xl mx-auto">
+      <!-- Q1 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">What exactly is in a TinyOps workflow kit?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          Each kit contains everything you need to run an automated operation on autopilot. This includes: public Notion database templates to duplicate, customizable templates for client communications (welcome emails, reminders), setup questionnaires, e-signature structure configurations, and a <strong>ready-to-import Make.com scenario blueprint (.json)</strong>.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">I am not technical at all. Can I really install this in 15 minutes?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          Yes, absolutely! We specifically design our kits for non-technical small business owners (plumbers, coaches, writers, creative agencies). We do not use any code. You simply copy our templates, import our Make.com visual blueprint, link your accounts, and turn it on. Our step-by-step guides walk you through every single click.
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">Do I need to pay for any other software to run these?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          No! All of our kits are built to run on the <strong>free tiers</strong> of our recommended tool stack: Notion, Google Forms/Workspace, Calendly, and Make.com. Make's free tier gives you 1,000 operations per month, which easily covers onboarding 20-30 clients. You only need to upgrade if your volume increases dramatically.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">What is your refund policy?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          We want you to feel completely confident. That is why we offer a <strong>30-day, risk-free money-back guarantee</strong> on all kits and bundle purchases. If you can't get the automation running, or decide it's not a fit for your workflow, just send us an email and we'll issue a full refund immediately. No questions asked.
+        </p>
+      </div>
+
+      <!-- Q5 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">How do I receive product updates?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          When we update our blueprints or add new templates to a kit, you will automatically receive an email with instructions on how to duplicate the updated assets. If you are an All-Access Bundle member, you also get automatic access to every brand-new kit we launch.
+        </p>
+      </div>
+
+      <!-- Q6 -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-2">
+        <h3 class="text-lg font-bold text-brand-ink">How does the Done-for-You setup service work?</h3>
+        <p class="text-sm text-brand-muted leading-relaxed">
+          If you are busy running your business and just want it done for you, we offer an expert installation service for $247. Once purchased, you'll grant us secure access to your empty accounts, and our team will install, test, and hand over the completely integrated system in under 48 hours.
+        </p>
+      </div>
+    </div>
+
+    <!-- Still Have Questions CTA -->
+    <div class="text-center pt-8 bg-brand-sand/30 border border-brand-border rounded-2xl p-8 max-w-3xl mx-auto space-y-4">
+      <h3 class="text-xl font-bold text-brand-ink">Still have questions?</h3>
+      <p class="text-sm text-brand-muted">Our friendly support team is always ready to help you save hours of admin.</p>
+      <a href="mailto:hello@tinyops.com" class="inline-block bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-3 px-8 rounded-xl text-sm transition">
+        Contact Support — hello@tinyops.com
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12 mt-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- Footer Left -->
+      <div class="space-y-4 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="130" height="38" fill="none" class="mx-auto md:mx-0">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Pre-assembled AI workflow kits for small business owners who'd rather work with clients than chase admin.
+        </p>
+      </div>
+
+      <!-- Footer Right -->
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-xs font-semibold text-brand-muted">
+          <span>Need help? <a href="mailto:hello@tinyops.com" class="text-brand-indigo underline">hello@tinyops.com</a></span>
+          <span class="hidden sm:inline text-brand-border">|</span>
+          <span class="flex items-center text-brand-emerald">
+            <span class="text-base mr-1">🛡️</span> 30-Day Money-Back Guarantee
+          </span>
+        </div>
+        <p class="text-[10px] text-brand-muted text-center md:text-right">
+          &copy; 2026 TinyOps. All rights reserved. Notion, Calendly, Make, Stripe, and Google are trademarks of their respective owners.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

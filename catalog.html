@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Kits Catalog — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/index.html" class="hover:text-brand-ink transition">Home</a>
+        <a href="/catalog" class="text-brand-ink transition font-bold">Workflow Kits</a>
+        <a href="/about" class="hover:text-brand-ink transition">About</a>
+        <a href="/faq" class="hover:text-brand-ink transition">FAQ</a>
+        <a href="/catalog#bundle" class="text-brand-indigo hover:text-brand-indigo/80 transition font-semibold">★ All-Access Bundle</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="flex items-center space-x-4">
+        <a href="/checkout?item=all-access" class="bg-brand-ink text-brand-cream hover:bg-brand-ink/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Get All-Access</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Catalog Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16 flex-grow space-y-16">
+    <div class="text-center space-y-4 max-w-2xl mx-auto">
+      <h1 class="text-4xl font-extrabold text-brand-ink tracking-tight">TinyOps Automation Kits Catalog</h1>
+      <p class="text-lg text-brand-muted leading-relaxed">
+        Pre-assembled workflow kits that help you run your business operations on autopilot. Choose individual kits below, or save 60%+ by getting the All-Access Bundle.
+      </p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid md:grid-cols-2 gap-8" id="kits-grid">
+      <!-- 1. Client Onboarding Kit (Flagship) -->
+      <div class="bg-brand-cream border-2 border-brand-indigo rounded-2xl p-8 shadow-md relative flex flex-col justify-between">
+        <div class="absolute -top-3.5 left-6 bg-brand-indigo text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+          Flagship Kit • Active & Ready
+        </div>
+        <div class="space-y-6">
+          <div class="flex justify-between items-start pt-2">
+            <div>
+              <h3 class="text-2xl font-bold text-brand-ink">Client Onboarding Kit</h3>
+              <p class="text-xs text-brand-muted mt-1">For coaches, consultants, freelancers, and agency owners</p>
+            </div>
+            <div class="text-right">
+              <span class="text-3xl font-extrabold text-brand-ink">$67</span>
+              <p class="text-[10px] text-brand-muted line-through font-medium">$149 Value</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Automates your intake, Notion client CRM synchronization, professional e-signature proposals, welcome email routing, and kick-off meeting reminders. Runs silently using Gmail, Notion, Calendly, and Make.com.
+          </p>
+
+          <div class="space-y-3 bg-brand-sand/50 p-4 rounded-xl border border-brand-border text-xs">
+            <p class="font-bold text-brand-ink uppercase tracking-wider text-[10px]">What's Included:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-brand-muted">
+              <div class="flex items-center space-x-2"><span>📓</span> <span>Notion Client CRM</span></div>
+              <div class="flex items-center space-x-2"><span>📝</span> <span>Intake Form Structure</span></div>
+              <div class="flex items-center space-x-2"><span>📄</span> <span>Proposal Template</span></div>
+              <div class="flex items-center space-x-2"><span>📧</span> <span>3 Welcome Emails</span></div>
+              <div class="flex items-center space-x-2"><span>📅</span> <span>Reminder Sequences</span></div>
+              <div class="flex items-center space-x-2"><span>⚙️</span> <span>Make Scenario JSON</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/kits/client-onboarding" class="flex-1 bg-brand-sand text-brand-ink border border-brand-border hover:bg-brand-border/40 transition text-center font-bold py-3 px-4 rounded-xl text-sm">
+            View Details
+          </a>
+          <a href="/checkout?item=client-onboarding" class="flex-1 bg-brand-indigo hover:bg-brand-indigo/95 text-white transition text-center font-bold py-3 px-4 rounded-xl text-sm">
+            Get Kit — $67
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Invoice Follow-up Kit (Coming Soon) -->
+      <div class="bg-brand-sand/40 border border-brand-border rounded-2xl p-8 flex flex-col justify-between opacity-85">
+        <div class="space-y-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl font-bold text-brand-ink">Invoice Follow-up Kit</h3>
+              <p class="text-xs text-brand-muted mt-1">For freelancers, trades pros, and service providers</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-bold uppercase tracking-wider bg-brand-amber/10 text-brand-amber px-2.5 py-1 rounded-full">Coming Soon</span>
+            </div>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Stop chasing late invoice payments manually. This kit automatically links to your invoicing tool (Stripe, QuickBooks) and sends beautiful, gentle-yet-firm automated follow-up sequences on day 1, 3, and 7 past due.
+          </p>
+
+          <div class="space-y-3 bg-brand-sand p-4 rounded-xl border border-brand-border text-xs text-brand-muted">
+            <p class="font-bold text-brand-ink uppercase tracking-wider text-[10px]">What is included:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div class="flex items-center space-x-2"><span>💰</span> <span>Overdue Dashboard</span></div>
+              <div class="flex items-center space-x-2"><span>📧</span> <span>3 Invoice Reminders</span></div>
+              <div class="flex items-center space-x-2"><span>📱</span> <span>SMS Follow-up Drafts</span></div>
+              <div class="flex items-center space-x-2"><span>⚙️</span> <span>Stripe Integration Glue</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <div class="bg-brand-sand border border-brand-border text-center font-semibold text-brand-muted py-3 px-4 rounded-xl text-sm">
+            Releasing July 2026 — Included in Bundle
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Google Review Collector (Coming Soon) -->
+      <div class="bg-brand-sand/40 border border-brand-border rounded-2xl p-8 flex flex-col justify-between opacity-85">
+        <div class="space-y-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl font-bold text-brand-ink">Review Collection Kit</h3>
+              <p class="text-xs text-brand-muted mt-1">For local trades, service firms, and boutique agencies</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-bold uppercase tracking-wider bg-brand-amber/10 text-brand-amber px-2.5 py-1 rounded-full">Coming Soon</span>
+            </div>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Generate 5-star Google Reviews on autopilot. Once a client is marked "Completed" in your Notion CRM, this kit automatically waits 24 hours, analyzes project satisfaction, and sends a highly optimized feedback & Google review request link.
+          </p>
+
+          <div class="space-y-3 bg-brand-sand p-4 rounded-xl border border-brand-border text-xs text-brand-muted">
+            <p class="font-bold text-brand-ink uppercase tracking-wider text-[10px]">What is included:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div class="flex items-center space-x-2"><span>⭐</span> <span>Review Request Matrix</span></div>
+              <div class="flex items-center space-x-2"><span>📧</span> <span>Satisfaction Email templates</span></div>
+              <div class="flex items-center space-x-2"><span>⚙️</span> <span>Review Link Generator</span></div>
+              <div class="flex items-center space-x-2"><span>🛡️</span> <span>Negative Feedback Filter</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <div class="bg-brand-sand border border-brand-border text-center font-semibold text-brand-muted py-3 px-4 rounded-xl text-sm">
+            Releasing August 2026 — Included in Bundle
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Lead Response Auto-Pilot (Coming Soon) -->
+      <div class="bg-brand-sand/40 border border-brand-border rounded-2xl p-8 flex flex-col justify-between opacity-85">
+        <div class="space-y-6">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl font-bold text-brand-ink">5-Min Lead Response Kit</h3>
+              <p class="text-xs text-brand-muted mt-1">For any service provider wanting to win more business</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-bold uppercase tracking-wider bg-brand-amber/10 text-brand-amber px-2.5 py-1 rounded-full">Coming Soon</span>
+            </div>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Leads go cold in minutes. This automation connects directly to your website contact form. Within 5 minutes of a lead submission, they receive an automated, friendly personalized text and email scheduling options, securing the booking before competitors reply.
+          </p>
+
+          <div class="space-y-3 bg-brand-sand p-4 rounded-xl border border-brand-border text-xs text-brand-muted">
+            <p class="font-bold text-brand-ink uppercase tracking-wider text-[10px]">What is included:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div class="flex items-center space-x-2"><span>⚡</span> <span>Speedy Lead Processor</span></div>
+              <div class="flex items-center space-x-2"><span>📧</span> <span>Personalized Auto-Replies</span></div>
+              <div class="flex items-center space-x-2"><span>💬</span> <span>SMS Automation Templates</span></div>
+              <div class="flex items-center space-x-2"><span>⚙️</span> <span>Contact Form Connector</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <div class="bg-brand-sand border border-brand-border text-center font-semibold text-brand-muted py-3 px-4 rounded-xl text-sm">
+            Releasing September 2026 — Included in Bundle
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All-Access Bundle Upsell -->
+    <section id="bundle" class="bg-brand-ink text-brand-cream rounded-3xl p-8 md:p-12 shadow-xl border border-brand-indigo/30 relative overflow-hidden">
+      <!-- Ambient light on background -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-brand-indigo/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+      
+      <div class="relative grid md:grid-cols-12 gap-12 items-center">
+        <!-- Text Left -->
+        <div class="md:col-span-7 space-y-6">
+          <span class="bg-brand-indigo text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+            Best Value Upgrade
+          </span>
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+            Get lifetime access to <br class="hidden sm:inline">every workflow kit we build
+          </h2>
+          <p class="text-sm text-brand-muted leading-relaxed max-w-lg">
+            Stop buying kits one-by-one. Lock in the **All-Access Lifetime Bundle** today. You'll get instant access to the Client Onboarding Kit now, plus every future kit (Invoicing, Reviews, Lead Response, Appointments) automatically added to your dashboard the day they launch.
+          </p>
+          <div class="space-y-3">
+            <p class="font-bold uppercase tracking-wider text-xs text-brand-indigo">All-Access Member Privileges:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-brand-cream/80">
+              <div class="flex items-center space-x-2">
+                <span class="text-brand-emerald">★</span>
+                <span>All 5+ Core Automation Kits</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-brand-emerald">★</span>
+                <span>Lifetime Updates & Support</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-brand-emerald">★</span>
+                <span>Private Member Slack Community</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-brand-emerald">★</span>
+                <span>Done-for-You Setup Discount (Save $100)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Card Right -->
+        <div class="md:col-span-5 bg-brand-cream text-brand-ink rounded-2xl p-8 border border-brand-border shadow-lg space-y-6">
+          <div class="text-center space-y-2">
+            <h3 class="text-lg font-bold uppercase tracking-wider text-brand-muted">Lifetime Membership</h3>
+            <div class="flex items-center justify-center space-x-2">
+              <span class="text-4xl md:text-5xl font-black text-brand-ink">$297</span>
+              <span class="text-sm text-brand-muted font-semibold">one-time payment</span>
+            </div>
+            <p class="text-xs text-brand-muted font-medium">Or annual subscription for $197/year</p>
+          </div>
+
+          <div class="border-t border-brand-border pt-4 space-y-4">
+            <a href="/checkout?item=all-access" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white text-center font-bold py-4 rounded-xl shadow-lg shadow-brand-indigo/15">
+              Secure Lifetime Bundle ($297)
+            </a>
+          </div>
+
+          <p class="text-[10px] text-brand-muted text-center italic">
+            Backed by our risk-free 30-day refund policy. Zero monthly hidden fees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12 mt-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- Footer Left -->
+      <div class="space-y-4 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="130" height="38" fill="none" class="mx-auto md:mx-0">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Pre-assembled AI workflow kits for small business owners who'd rather work with clients than chase admin.
+        </p>
+      </div>
+
+      <!-- Footer Right -->
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-xs font-semibold text-brand-muted">
+          <span>Need help? <a href="mailto:hello@tinyops.com" class="text-brand-indigo underline">hello@tinyops.com</a></span>
+          <span class="hidden sm:inline text-brand-border">|</span>
+          <span class="flex items-center text-brand-emerald">
+            <span class="text-base mr-1">🛡️</span> 30-Day Money-Back Guarantee
+          </span>
+        </div>
+        <p class="text-[10px] text-brand-muted text-center md:text-right">
+          &copy; 2026 TinyOps. All rights reserved. Notion, Calendly, Make, Stripe, and Google are trademarks of their respective owners.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

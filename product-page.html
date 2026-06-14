@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Onboarding Kit — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <!-- Embedded logo-full.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/index.html" class="hover:text-brand-ink transition">← Back to Home</a>
+        <a href="#whats-inside" class="hover:text-brand-ink transition">What's Inside</a>
+        <a href="#roi" class="hover:text-brand-ink transition">Time Savings</a>
+        <a href="#requirements" class="hover:text-brand-ink transition">System Requirements</a>
+        <a href="#faq" class="hover:text-brand-ink transition">FAQ</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="flex items-center space-x-4">
+        <a href="/checkout?item=client-onboarding" class="bg-brand-indigo text-white hover:bg-brand-indigo/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Buy Kit — $67</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Hero Section -->
+  <section class="px-6 py-16 md:py-20 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <!-- Product Details Left -->
+      <div class="md:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-brand-indigo/10 px-3 py-1.5 rounded-full border border-brand-indigo/20">
+          <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Flagship Automation Kit</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-brand-ink tracking-tight leading-none">
+          Client Onboarding <br><span class="text-brand-indigo">Workflow Kit</span>.
+        </h1>
+        <p class="text-lg text-brand-muted max-w-xl leading-relaxed">
+          Automate your client intake, proposals, e-signatures, welcome emails, and scheduling reminders. Set up in 15 minutes, with tools you already use. Cancel your expensive $40/mo platform and own your systems forever.
+        </p>
+
+        <!-- Bullet Highlights -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-start">
+            <span class="text-brand-emerald text-base mr-3 mt-0.5">✓</span>
+            <span class="text-sm font-medium text-brand-muted">**1-Click Duplication:** Get instant access to our pre-built templates</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-brand-emerald text-base mr-3 mt-0.5">✓</span>
+            <span class="text-sm font-medium text-brand-muted">**Uses Existing Free Tools:** No new subscriptions required (Notion, Drive, Calendly)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-brand-emerald text-base mr-3 mt-0.5">✓</span>
+            <span class="text-sm font-medium text-brand-muted">**Pre-Assembled Blueprint:** Copy, paste, import, and launch in 15 minutes flat</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 items-center sm:items-start">
+          <a href="/checkout?item=client-onboarding" class="w-full sm:w-auto bg-brand-indigo text-white hover:bg-brand-indigo/90 transition text-center font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-indigo/10">
+            Get Instant Access — $67
+          </a>
+          <a href="#whats-inside" class="w-full sm:w-auto bg-brand-sand text-brand-ink hover:bg-brand-border/60 transition text-center font-bold px-8 py-4 rounded-xl border border-brand-border">
+            See What's Included
+          </a>
+        </div>
+        <p class="text-xs text-brand-muted italic text-center sm:text-left">
+          One-time payment of $67. Own it forever. Supported by a 30-day money-back guarantee.
+        </p>
+      </div>
+
+      <!-- Hero Visual Right (Notion + Gmail Mockup) -->
+      <div class="md:col-span-5 bg-brand-sand border border-brand-border rounded-2xl p-6 shadow-sm space-y-6">
+        <div class="flex items-center justify-between border-b border-brand-border pb-4">
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">📓</span>
+            <span class="text-xs font-extrabold text-brand-ink uppercase">Client CRM Template</span>
+          </div>
+          <span class="bg-brand-indigo/10 text-brand-indigo text-[10px] font-bold px-2 py-0.5 rounded uppercase">Notion Live</span>
+        </div>
+        
+        <!-- Notion Database Layout Representation -->
+        <div class="space-y-3.5">
+          <!-- Item 1 -->
+          <div class="bg-brand-cream border border-brand-border p-3 rounded-lg flex items-center justify-between text-xs">
+            <div class="font-semibold text-brand-ink flex items-center">
+              <span class="w-2.5 h-2.5 bg-brand-amber rounded-full mr-2"></span>
+              <span>Acme Corp — Proposal Sent</span>
+            </div>
+            <span class="text-[10px] font-medium text-brand-muted">2 mins ago</span>
+          </div>
+          <!-- Item 2 -->
+          <div class="bg-brand-cream border border-brand-border p-3 rounded-lg flex items-center justify-between text-xs">
+            <div class="font-semibold text-brand-ink flex items-center">
+              <span class="w-2.5 h-2.5 bg-brand-indigo rounded-full mr-2"></span>
+              <span>Sarah Jenkins — Onboarded</span>
+            </div>
+            <span class="text-[10px] font-medium text-brand-muted">1 hour ago</span>
+          </div>
+          <!-- Item 3 -->
+          <div class="bg-brand-cream border border-brand-border p-3 rounded-lg flex items-center justify-between text-xs">
+            <div class="font-semibold text-brand-ink flex items-center">
+              <span class="w-2.5 h-2.5 bg-brand-emerald rounded-full mr-2"></span>
+              <span>Design Studio — Signed & Paid</span>
+            </div>
+            <span class="text-[10px] font-medium text-brand-muted">3 hours ago</span>
+          </div>
+        </div>
+
+        <!-- Automation Connection Badge -->
+        <div class="bg-brand-indigo text-brand-cream text-xs rounded-xl p-4 flex items-center justify-between border border-brand-indigo/20">
+          <div class="flex items-center space-x-3">
+            <span class="text-xl">⚙️</span>
+            <div>
+              <p class="font-bold">Make.com Automation</p>
+              <p class="text-[10px] opacity-80">Connecting Form → Notion → Gmail</p>
+            </div>
+          </div>
+          <span class="bg-brand-cream text-brand-indigo font-bold text-[10px] px-2 py-1 rounded">Active</span>
+        </div>
+
+        <p class="text-[10px] text-brand-muted text-center italic">
+          Everything is fully configured and ready to link. Setup guide is visual & simple.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The ROI & Time-Savings Block -->
+  <section id="roi" class="border-y border-brand-border bg-brand-sand/50 py-16 px-6">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-ink tracking-tight">How much is your manual admin costing you?</h2>
+        <p class="text-sm text-brand-muted max-w-xl mx-auto">
+          Spending hours typing the same emails, chasing e-signatures, and entering lead details into spreadsheets is holding you back. Here is exactly what you save with our kit:
+        </p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl overflow-hidden shadow-sm">
+        <div class="grid grid-cols-12 bg-brand-ink text-brand-cream p-4 text-xs font-bold uppercase tracking-wider">
+          <div class="col-span-6">Task (Weekly Onboarding Admin)</div>
+          <div class="col-span-3 text-center">Before (Manual)</div>
+          <div class="col-span-3 text-center">After (Automated)</div>
+        </div>
+        
+        <div class="divide-y divide-brand-border text-sm text-brand-ink">
+          <!-- Row 1 -->
+          <div class="grid grid-cols-12 p-4">
+            <div class="col-span-6 font-semibold">Entering Lead Info into CRM</div>
+            <div class="col-span-3 text-center text-brand-muted">5 mins / lead</div>
+            <div class="col-span-3 text-center text-brand-emerald font-bold">0 mins (Instant)</div>
+          </div>
+          <!-- Row 2 -->
+          <div class="grid grid-cols-12 p-4">
+            <div class="col-span-6 font-semibold">Creating & Emailing Proposals</div>
+            <div class="col-span-3 text-center text-brand-muted">15 mins / proposal</div>
+            <div class="col-span-3 text-center text-brand-emerald font-bold">2 mins (Verification)</div>
+          </div>
+          <!-- Row 3 -->
+          <div class="grid grid-cols-12 p-4">
+            <div class="col-span-6 font-semibold">Sending Welcome Onboarding Emails</div>
+            <div class="col-span-3 text-center text-brand-muted">10 mins / client</div>
+            <div class="col-span-3 text-center text-brand-emerald font-bold">0 mins (Autopilot)</div>
+          </div>
+          <!-- Row 4 -->
+          <div class="grid grid-cols-12 p-4">
+            <div class="col-span-6 font-semibold">Writing Session Reminders (24h/1h)</div>
+            <div class="col-span-3 text-center text-brand-muted">5 mins / booking</div>
+            <div class="col-span-3 text-center text-brand-emerald font-bold">0 mins (Autopilot)</div>
+          </div>
+          <!-- Row 5 -->
+          <div class="grid grid-cols-12 p-4">
+            <div class="col-span-6 font-semibold">Chasing & Following up Cold Leads</div>
+            <div class="col-span-3 text-center text-brand-muted">15 mins / client</div>
+            <div class="col-span-3 text-center text-brand-emerald font-bold">0 mins (Autopilot)</div>
+          </div>
+          <!-- Total Row -->
+          <div class="grid grid-cols-12 p-4 bg-brand-sand font-bold">
+            <div class="col-span-6">Weekly Total (Based on 10 clients)</div>
+            <div class="col-span-3 text-center text-red-600 line-through">~7 Hours</div>
+            <div class="col-span-3 text-center text-brand-indigo text-lg">~20 Minutes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-xs text-brand-muted font-medium">
+          At a standard hourly rate of $50, this kit pays for itself in less than **2 hours** of saved administrative time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Inside (The Deliverables Grid) -->
+  <section id="whats-inside" class="px-6 py-20 max-w-6xl mx-auto space-y-16">
+    <div class="text-center space-y-4 max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-ink tracking-tight">What's included in the Onboarding Kit</h2>
+      <p class="text-base text-brand-muted leading-relaxed">
+        This is a complete, pre-assembled system. You don't just get templates — you get a fully connected automation flow that glues them together seamlessly.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1. Notion CRM Database -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">📓</div>
+        <h3 class="font-bold text-brand-ink text-lg">1. Notion Client CRM Template</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          A fully structured CRM designed specifically to house client onboarding properties. Includes contact details, proposal sign status, scheduling logs, project timelines, and custom Kanban pipeline views.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Notion Template</span>
+      </div>
+
+      <!-- 2. Client Intake Form Structure -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">📝</div>
+        <h3 class="font-bold text-brand-ink text-lg">2. Client Intake Form Questions</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Copy-paste client intake questions optimized to capture critical project metrics (goals, budget, deadline, expectations). Drop them directly into Google Forms and connect them instantly to your CRM.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Google Forms Schema</span>
+      </div>
+
+      <!-- 3. Proposal Template -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">📄</div>
+        <h3 class="font-bold text-brand-ink text-lg">3. Google Docs Proposal Template</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          A professional, fully pre-formatted Google Doc proposal with clean styling, dynamic placeholders, and structured sections. Formatted for automatic PDF export and e-signature routing.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Google Doc</span>
+      </div>
+
+      <!-- 4. Written 3-Email Welcome Sequence -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">📧</div>
+        <h3 class="font-bold text-brand-ink text-lg">4. 3-Email Welcome Sequence</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Pre-written, fill-in-the-blank onboarding sequences: Email 1: Instant "Welcome + Portal Link"; Email 2: "Calendly Scheduling + Intake Review"; Email 3: "Pre-Work Request". Written to reduce churn and build excitement.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Email Copy Templates</span>
+      </div>
+
+      <!-- 5. Appointment Reminders & Follow-ups -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">📅</div>
+        <h3 class="font-bold text-brand-ink text-lg">5. Follow-ups & Reminders</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Pre-written text and copy for automated appointment reminders (sent 24h and 1h before your onboarding kick-off), plus an automated 3-day polite follow-up sequence for leads who haven't signed their proposal.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Copy Templates</span>
+      </div>
+
+      <!-- 6. Make.com Blueprint and Installation Guide -->
+      <div class="bg-brand-cream border border-brand-border rounded-xl p-6 space-y-4 shadow-sm">
+        <div class="bg-brand-indigo/10 text-brand-indigo w-10 h-10 rounded-lg flex items-center justify-center text-lg">⚙️</div>
+        <h3 class="font-bold text-brand-ink text-lg">6. Make.com Automation Blueprint</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          The "automation engine" file. Simply download our pre-made Make.com JSON file, import it into your free Make.com account, and link your credentials following our visual, screenshot-rich 15-minute guide.
+        </p>
+        <span class="inline-block text-[10px] font-extrabold uppercase bg-brand-indigo/10 text-brand-indigo px-2.5 py-1 rounded">Make Scenario File</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete End-to-End Visual Map -->
+  <section class="bg-brand-sand border-y border-brand-border py-20 px-6">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <div class="text-center space-y-4">
+        <h2 class="text-3xl font-extrabold text-brand-ink tracking-tight">The Onboarding Journey</h2>
+        <p class="text-sm text-brand-muted max-w-xl mx-auto">
+          Here is exactly what happens behind the scenes from the moment a new lead touches your website to your booked kick-off session. All in the background, on autopilot.
+        </p>
+      </div>
+
+      <!-- The Flow Map Nodes -->
+      <div class="relative pl-8 md:pl-0 md:flex md:flex-col md:items-center space-y-8 md:space-y-0 md:space-y-12">
+        <!-- Vertical Connection Line for Mobile -->
+        <div class="absolute left-3.5 top-2 bottom-2 w-0.5 bg-brand-indigo/20 md:hidden"></div>
+
+        <!-- Flow 1 -->
+        <div class="relative md:flex md:items-center md:justify-start w-full md:max-w-2xl">
+          <div class="bg-brand-indigo text-brand-cream w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm absolute -left-8 md:relative md:left-0 z-10 md:mr-6">1</div>
+          <div class="bg-brand-cream border border-brand-border rounded-xl p-5 shadow-sm flex-1">
+            <h4 class="font-bold text-brand-ink text-sm">Lead Submits Google Intake Form</h4>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Customer fills your quote/contact form on your website. No manual copying needed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Flow 2 -->
+        <div class="relative md:flex md:items-center md:justify-end w-full md:max-w-2xl">
+          <div class="bg-brand-indigo text-brand-cream w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm absolute -left-8 md:relative md:left-0 z-10 md:order-2 md:ml-6">2</div>
+          <div class="bg-brand-cream border border-brand-border rounded-xl p-5 shadow-sm flex-1 md:order-1">
+            <h4 class="font-bold text-brand-ink text-sm">Notion CRM Instantly Updates</h4>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Make.com captures the form inputs, creates a new entry in your client database, and maps their budget, timelines, and scope.
+            </p>
+          </div>
+        </div>
+
+        <!-- Flow 3 -->
+        <div class="relative md:flex md:items-center md:justify-start w-full md:max-w-2xl">
+          <div class="bg-brand-indigo text-brand-cream w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm absolute -left-8 md:relative md:left-0 z-10 md:mr-6">3</div>
+          <div class="bg-brand-cream border border-brand-border rounded-xl p-5 shadow-sm flex-1">
+            <h4 class="font-bold text-brand-ink text-sm">Proposal Generated & Sent via Gmail</h4>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              A personalized Google Doc proposal with variables (Name, Scope) is auto-created, saved as PDF, and emailed out for signature.
+            </p>
+          </div>
+        </div>
+
+        <!-- Flow 4 -->
+        <div class="relative md:flex md:items-center md:justify-end w-full md:max-w-2xl">
+          <div class="bg-brand-indigo text-brand-cream w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm absolute -left-8 md:relative md:left-0 z-10 md:order-2 md:ml-6">4</div>
+          <div class="bg-brand-cream border border-brand-border rounded-xl p-5 shadow-sm flex-1 md:order-1">
+            <h4 class="font-bold text-brand-ink text-sm">Signature Triggers Welcome & Scheduling</h4>
+            <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+              Once they sign, the CRM status updates to "Signed & Paid". Gmail auto-sends the welcome sequence and Calendly link to secure their booking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Requirements (The "No Subscription" Promise) -->
+  <section id="requirements" class="px-6 py-20 max-w-4xl mx-auto space-y-12">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl font-extrabold text-brand-ink tracking-tight">No monthly platform fees. Ever.</h2>
+      <p class="text-sm text-brand-muted max-w-lg mx-auto">
+        Most CRM platforms charge $30–$50/mo. Our system utilizes standard, free-tier platforms. Once you buy this kit, it is 100% yours to run for $0/month.
+      </p>
+    </div>
+
+    <div class="bg-brand-cream border border-brand-border rounded-2xl overflow-hidden shadow-sm">
+      <div class="grid grid-cols-12 bg-brand-sand p-4 text-xs font-bold uppercase tracking-wider border-b border-brand-border text-brand-ink">
+        <div class="col-span-4">Required Tool</div>
+        <div class="col-span-4 text-center">Cost Tier</div>
+        <div class="col-span-4 text-right">Already Have It?</div>
+      </div>
+
+      <div class="divide-y divide-brand-border text-sm text-brand-ink">
+        <!-- Notion -->
+        <div class="grid grid-cols-12 p-4">
+          <div class="col-span-4 font-bold flex items-center">📓 Notion</div>
+          <div class="col-span-4 text-center text-brand-emerald font-semibold">Free Plan</div>
+          <div class="col-span-4 text-right text-brand-muted text-xs font-medium">Very likely ✅</div>
+        </div>
+        <!-- Google Workspace -->
+        <div class="grid grid-cols-12 p-4">
+          <div class="col-span-4 font-bold flex items-center">✉️ Gmail & Google Drive</div>
+          <div class="col-span-4 text-center text-brand-emerald font-semibold">Free Google Account</div>
+          <div class="col-span-4 text-right text-brand-muted text-xs font-medium">Almost certainly ✅</div>
+        </div>
+        <!-- Calendly -->
+        <div class="grid grid-cols-12 p-4">
+          <div class="col-span-4 font-bold flex items-center">📅 Calendly</div>
+          <div class="col-span-4 text-center text-brand-emerald font-semibold">Free Plan</div>
+          <div class="col-span-4 text-right text-brand-muted text-xs font-medium">Likely ✅</div>
+        </div>
+        <!-- Make.com -->
+        <div class="grid grid-cols-12 p-4">
+          <div class="col-span-4 font-bold flex items-center">⚙️ Make.com</div>
+          <div class="col-span-4 text-center text-brand-emerald font-semibold">Free Plan (1000 ops/mo)</div>
+          <div class="col-span-4 text-right text-brand-muted text-xs font-medium">Takes 2 min to create ✅</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Done-for-You Upsell Callout -->
+  <section class="px-6 py-6 max-w-4xl mx-auto">
+    <div class="bg-brand-sand border border-brand-border rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 max-w-xl text-center md:text-left">
+        <span class="bg-brand-amber/10 text-brand-amber text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">
+          Safety Net Guarantee
+        </span>
+        <h3 class="text-xl font-bold text-brand-ink">Too busy? We will install it for you.</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          If you don't have 15 minutes or get stuck during setup, you can upgrade to our **Done-for-You Setup Service** for just $180. We'll connect your accounts, test the workflow, and hand you a fully working dashboard.
+        </p>
+      </div>
+      <a href="mailto:hello@tinyops.com?subject=Done-for-you%20Setup" class="bg-brand-ink text-brand-cream hover:bg-brand-ink/90 transition text-center font-bold px-6 py-3 rounded-lg text-sm whitespace-nowrap">
+        Inquire Setup ($247 Total)
+      </a>
+    </div>
+  </section>
+
+  <!-- Core Objections / Specific FAQ -->
+  <section id="faq" class="px-6 py-20 max-w-3xl mx-auto space-y-12">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl font-extrabold text-brand-ink tracking-tight">Onboarding Kit FAQ</h2>
+      <p class="text-sm text-brand-muted">Answers to common pre-purchase questions about our onboarding system.</p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- FAQ 1 -->
+      <div class="bg-brand-sand/50 border border-brand-border rounded-xl p-6">
+        <h3 class="font-bold text-brand-ink text-base">Do I need an expensive paid e-signature platform?</h3>
+        <p class="text-sm text-brand-muted mt-3 leading-relaxed">
+          No! Our Google Docs proposal template integrates directly with lightweight free signature add-ons or simple auto-generated PDF check-marks. You don't need to subscribe to DocuSign or PandaDoc to make this proposal flow work beautifully.
+        </p>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-brand-sand/50 border border-brand-border rounded-xl p-6">
+        <h3 class="font-bold text-brand-ink text-base">What if the 15-minute install takes me longer?</h3>
+        <p class="text-sm text-brand-muted mt-3 leading-relaxed">
+          If you follow our steps and it takes you longer than 30 minutes, or you find it confusing, simply email us at hello@tinyops.com. We will either log in and fix it for you for free, or issue you a 100% full refund immediately. You have zero risk.
+        </p>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-brand-sand/50 border border-brand-border rounded-xl p-6">
+        <h3 class="font-bold text-brand-ink text-base">Can I run multiple onboarding pipelines with this?</h3>
+        <p class="text-sm text-brand-muted mt-3 leading-relaxed">
+          Yes! Once duplicated into your Notion account, you can create separate tags, pipelines, or tabs inside the CRM for different services (e.g., "Coaching Clients" vs "Agency Clients"). The Make.com scenario will handle all of them automatically.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purchase Section (Target Checkout Box) -->
+  <section id="buy" class="px-6 py-12 max-w-2xl mx-auto text-center space-y-8">
+    <div class="bg-brand-cream border-2 border-brand-indigo rounded-3xl p-8 md:p-12 shadow-xl space-y-6 relative">
+      <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-indigo text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+        Instant Download Secure Checkout
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-ink">Get the Onboarding Kit Today</h2>
+        <p class="text-xs text-brand-muted">One-time payment. Lifetime updates. Zero recurring fees.</p>
+      </div>
+
+      <div class="flex items-center justify-center space-x-3 py-4 border-y border-brand-border">
+        <div class="text-left">
+          <span class="text-sm text-brand-muted line-through font-semibold">$149 Value</span>
+          <div class="flex items-baseline space-x-2">
+            <span class="text-4xl md:text-5xl font-black text-brand-ink">$67</span>
+            <span class="text-xs font-bold text-brand-indigo uppercase">Limited-Time Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <!-- Purchase Button (Simulated LemonSqueezy Link) -->
+        <a href="/checkout?item=client-onboarding" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white text-center font-bold py-4 rounded-xl shadow-lg shadow-brand-indigo/15 text-lg">
+          Buy Now & Download — $67
+        </a>
+        <div class="flex flex-wrap justify-center items-center gap-4 text-[10px] text-brand-muted font-bold uppercase tracking-wider">
+          <span class="flex items-center">💳 Credit Card</span>
+          <span>•</span>
+          <span class="flex items-center">🍏 Apple Pay</span>
+          <span>•</span>
+          <span class="flex items-center">🅿️ PayPal</span>
+        </div>
+      </div>
+
+      <!-- Trust Badging -->
+      <div class="bg-brand-sand p-4 rounded-xl border border-brand-border flex items-center space-x-3 text-left">
+        <span class="text-2xl">🛡️</span>
+        <div>
+          <p class="text-xs font-bold text-brand-ink">30-Day Money-Back Guarantee</p>
+          <p class="text-[10px] text-brand-muted mt-0.5 leading-relaxed">
+            If this kit does not save you at least 5 hours in your first week, or you are not completely satisfied, email us for an instant, polite refund.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12 mt-20">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- Footer Left -->
+      <div class="space-y-4 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="130" height="38" fill="none" class="mx-auto md:mx-0">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Pre-assembled AI workflow kits for small business owners who'd rather work with clients than chase admin.
+        </p>
+      </div>
+
+      <!-- Footer Right -->
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <!-- Support & Security -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-xs font-semibold text-brand-muted">
+          <span>Need help? <a href="mailto:hello@tinyops.com" class="text-brand-indigo underline">hello@tinyops.com</a></span>
+          <span class="hidden sm:inline text-brand-border">|</span>
+          <span class="flex items-center text-brand-emerald">
+            <span class="text-base mr-1">🛡️</span> 30-Day Money-Back Guarantee
+          </span>
+        </div>
+        <p class="text-[10px] text-brand-muted text-center md:text-right">
+          &copy; 2026 TinyOps. All rights reserved. Notion, Calendly, Make, Stripe, and Google are trademarks of their respective owners.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
