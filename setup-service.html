@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Done-For-You Setup Service — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/catalog" class="hover:text-brand-ink transition">← Back to Catalog</a>
+        <a href="#how-it-works" class="hover:text-brand-ink transition">How It Works</a>
+        <a href="#sow" class="hover:text-brand-ink transition">Scope of Work</a>
+        <a href="#security" class="hover:text-brand-ink transition">Privacy & Security</a>
+        <a href="#pricing" class="hover:text-brand-ink transition font-bold text-brand-indigo">Pricing</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="flex items-center space-x-4">
+        <a href="/checkout?item=setup-service" class="bg-brand-indigo text-white hover:bg-brand-indigo/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Order Setup — $247</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Hero Section -->
+  <section class="px-6 py-16 md:py-20 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <!-- Left Column -->
+      <div class="md:col-span-7 space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-brand-emerald/10 px-3 py-1.5 rounded-full border border-brand-emerald/20">
+          <span class="w-2 h-2 rounded-full bg-brand-emerald mr-1 animate-pulse"></span>
+          <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">48-Hr Delivery Guarantee</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-extrabold text-brand-ink tracking-tight leading-none">
+          Done-For-You <br><span class="text-brand-indigo">Workflow Setup Service</span>.
+        </h1>
+        
+        <p class="text-lg text-brand-muted max-w-xl leading-relaxed">
+          Too busy or not technical enough to configure automations yourself? Let us do the heavy lifting. We will securely install, connect, and fully test up to **3 active TinyOps kits** on your own Gmail, Notion, Calendly, and Stripe accounts. Get a 100% automated workspace in under 48 hours.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md">
+          <a href="/checkout?item=setup-service" class="flex-1 bg-brand-indigo hover:bg-brand-indigo/95 text-white transition text-center font-bold py-4 rounded-xl text-sm shadow-lg shadow-brand-indigo/15">
+            Book Setup Service ($247)
+          </a>
+          <a href="#sow" class="flex-1 bg-brand-sand hover:bg-brand-border/40 text-brand-ink border border-brand-border transition text-center font-bold py-4 rounded-xl text-sm">
+            Review Scope of Work
+          </a>
+        </div>
+
+        <p class="text-xs text-brand-muted flex items-center gap-1.5">
+          <span>🔒</span> Secure OAuth Integrations • 100% Refund if Technical Issues Occur
+        </p>
+      </div>
+
+      <!-- Right Column: Visual Process Card -->
+      <div class="md:col-span-5 bg-brand-cream border border-brand-border rounded-3xl p-8 shadow-xl space-y-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-indigo/5 rounded-full blur-2xl"></div>
+        
+        <h3 class="font-extrabold text-brand-ink text-base">The Setup Package Includes:</h3>
+        
+        <div class="space-y-4 text-xs text-brand-muted">
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">⚙️</span>
+            <div>
+              <p class="font-bold text-brand-ink">Complete Make.com Scenario Setup</p>
+              <p>Importing scenarios, mapping forms/databases, and setting filter nodes.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">📓</span>
+            <div>
+              <p class="font-bold text-brand-ink">Custom Notion CRM Portal</p>
+              <p>Duplication, branding with your logo/colors, and setting database views.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">🎥</span>
+            <div>
+              <p class="font-bold text-brand-ink">Personal Walkthrough Video</p>
+              <p>A customized 5-minute Loom walkthrough showing where everything lives.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <span class="text-lg">💬</span>
+            <div>
+              <p class="font-bold text-brand-ink">30 Days of Priority Support</p>
+              <p>Direct Slack and email line to our developers to resolve any hiccups.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-brand-border pt-4 text-center">
+          <p class="text-[10px] text-brand-muted uppercase tracking-wider font-bold text-brand-indigo">Ready in under 48 hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="bg-brand-sand/30 border-y border-brand-border py-16 px-6">
+    <div class="max-w-5xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Delivery Timeline</span>
+        <h2 class="text-3xl font-extrabold tracking-tight">The 4-Step Setup Process</h2>
+        <p class="text-sm text-brand-muted max-w-lg mx-auto">From questionnaire to automated hand-off, here is what your next 48 hours look like.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
+          <span class="absolute top-4 right-4 text-2xl font-black text-brand-border">01</span>
+          <h3 class="font-bold text-brand-ink text-sm">Questionnaire</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Immediately following checkout, complete our interactive questionnaire to define your packages, tool stack, and custom preferences.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
+          <span class="absolute top-4 right-4 text-2xl font-black text-brand-border">02</span>
+          <h3 class="font-bold text-brand-ink text-sm">OAuth Connections</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Provide temporary credentials or schedule a 30-minute Zoom screen-share. We connection-secure your Gmail, Notion, and Make accounts.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
+          <span class="absolute top-4 right-4 text-2xl font-black text-brand-border">03</span>
+          <h3 class="font-bold text-brand-ink text-sm">Testing & QA</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            We configure, custom-brand, and perform full test mock runs of all imported scenarios to ensure 100% operational success.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
+          <span class="absolute top-4 right-4 text-2xl font-black text-brand-border">04</span>
+          <h3 class="font-bold text-brand-ink text-sm">Loom Hand-Off</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            We deliver your active accounts, log out of credentials, shoot your walk-through video, and invite you to our member Slack workspace.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOW & Checklist Section -->
+  <section id="sow" class="py-20 max-w-5xl mx-auto px-6 space-y-12">
+    <div class="text-center space-y-3">
+      <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Absolute Transparency</span>
+      <h2 class="text-3xl font-extrabold tracking-tight">Scope of Work & Delivery Quality</h2>
+      <p class="text-sm text-brand-muted max-w-lg mx-auto">We operate with professional rigor. Read our official scope of work document and team checklist directly.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-stretch">
+      <!-- SOW Block -->
+      <div class="bg-brand-cream border border-brand-border rounded-2xl p-8 flex flex-col justify-between shadow-sm space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl">📄</span>
+            <h3 class="font-bold text-brand-ink text-lg">Scope of Work (SOW)</h3>
+          </div>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Defines the professional parameters of our setup contract. Outlines inclusions (up to 3 kits, custom styling, full testing, 30 days of support), exclusions (no legacy data migration or brand new custom script development), and payment structures.
+          </p>
+          <div class="bg-brand-sand p-4 rounded-xl text-[10px] text-brand-muted font-mono max-h-32 overflow-y-auto leading-relaxed border border-brand-border">
+            - Flat rate $247 USD setup contract.<br>
+            - Connecting Gmail, Notion, Calendly, and payment gateways.<br>
+            - Standard walkthrough recording and password exit protocols.<br>
+            - Fully vetted under secure GDPR-compliant access guidelines.
+          </div>
+        </div>
+        <div class="pt-4 flex items-center justify-between border-t border-brand-border text-xs">
+          <span class="text-brand-muted">Agreement Status: **Approved**</span>
+          <a href="/home/team/shared/setup-service/scope-of-work.md" class="text-brand-indigo font-bold hover:underline" target="_blank">View Raw Markdown</a>
+        </div>
+      </div>
+
+      <!-- Checklist Block -->
+      <div class="bg-brand-cream border border-brand-border rounded-2xl p-8 flex flex-col justify-between shadow-sm space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl">🛠️</span>
+            <h3 class="font-bold text-brand-ink text-lg">Team Quality Checklist</h3>
+          </div>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Our team's internal checklist for keeping setups flawless. Monitors quality checks across 5 distinct phases: Intake verification, Google Drive folder schemas, credential security, filter-node routing configurations, and end-to-end dry-run testing.
+          </p>
+          <div class="bg-brand-sand p-4 rounded-xl text-[10px] text-brand-muted font-mono max-h-32 overflow-y-auto leading-relaxed border border-brand-border">
+            - Validate account connections (Gmail, Forms, Notion Integration API).<br>
+            - Customize database styles and logo icons.<br>
+            - Dry run testing: test form submissions and automated draft testing.<br>
+            - Clean test logs before final handover.
+          </div>
+        </div>
+        <div class="pt-4 flex items-center justify-between border-t border-brand-border text-xs">
+          <span class="text-brand-muted">QA Compliance: **Required**</span>
+          <a href="/home/team/shared/setup-service/delivery-checklist.md" class="text-brand-indigo font-bold hover:underline" target="_blank">View Raw Markdown</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Privacy Section -->
+  <section id="security" class="bg-brand-sand/20 border-t border-brand-border py-16 px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      <div class="text-center space-y-3">
+        <h2 class="text-2xl font-bold text-brand-ink tracking-tight">Security & Credential Privacy</h2>
+        <p class="text-sm text-brand-muted">Your account security is our absolute highest priority. We deploy GDPR-compliant exit safety protocols.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 text-xs text-brand-muted">
+        <div class="space-y-2">
+          <h4 class="font-bold text-brand-ink text-sm">OAuth Connections Only</h4>
+          <p class="leading-relaxed">Whenever possible, we connect systems using standard OAuth consent pop-ups. We do not require or store your raw account passwords.</p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-brand-ink text-sm">Exit Password Reset</h4>
+          <p class="leading-relaxed">If temporary passwords are provided for setup, our delivery protocol explicitly requires that you reset your passwords immediately following hand-off.</p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-bold text-brand-ink text-sm">Zero Data Preservation</h4>
+          <p class="leading-relaxed">We never store your customer list, operational files, or payment transaction records. Everything stays on your private servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Pricing Call-out -->
+  <section id="pricing" class="max-w-4xl mx-auto px-6 py-12">
+    <div class="bg-brand-ink text-brand-cream rounded-3xl p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-indigo/15 rounded-full blur-2xl"></div>
+      
+      <div class="space-y-2">
+        <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Instant Onboarding questionnaire upon checkout</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Put Your Technical Tech-Debt On Us</h2>
+        <p class="text-xs text-brand-muted max-w-md mx-auto leading-relaxed">
+          Book our flat-rate setup service today, configure your parameters, and let our team launch your automated operational infrastructure.
+        </p>
+      </div>
+
+      <div class="pt-2 max-w-sm mx-auto space-y-4">
+        <a href="/checkout?item=setup-service" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-4 rounded-xl text-sm transition shadow-lg shadow-brand-indigo/20">
+          Unlock Done-For-You Setup — $247
+        </a>
+        <p class="text-[10px] text-brand-muted italic">Save $100 instantly on this service if you are an All-Access Bundle Member.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="space-y-4 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="130" height="38" fill="none" class="mx-auto md:mx-0">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+        <p class="text-xs text-brand-muted">
+          Pre-assembled AI workflow kits for small business owners who'd rather work with clients than chase admin.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-xs font-semibold text-brand-muted">
+          <span>Need help? <a href="mailto:hello@tinyops.com" class="text-brand-indigo underline">hello@tinyops.com</a></span>
+          <span class="hidden sm:inline text-brand-border">|</span>
+          <span class="flex items-center text-brand-emerald">
+            🛡️ 100% Onboarding Compliance Guarantee
+          </span>
+        </div>
+        <p class="text-[10px] text-brand-muted">
+          &copy; 2026 TinyOps. All rights reserved. Notion, Calendly, Make, Stripe, and Google are trademarks of their respective owners.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -76,7 +76,7 @@
   </header>
 
   <!-- Success Content -->
-  <main class="max-w-4xl mx-auto px-6 py-12 flex-grow space-y-12">
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-grow space-y-12 w-full">
     <!-- Success Banner -->
     <div class="bg-brand-emerald/5 border border-brand-emerald/20 rounded-3xl p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
       <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-emerald/10 rounded-full blur-2xl"></div>
@@ -88,75 +88,154 @@
       <div class="space-y-2">
         <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">Transaction complete</span>
         <h1 class="text-3xl md:text-4xl font-extrabold text-brand-ink tracking-tight" id="greeting-title">Welcome to TinyOps!</h1>
-        <p class="text-sm text-brand-muted max-w-lg mx-auto" id="receipt-sub text">
+        <p class="text-sm text-brand-muted max-w-lg mx-auto" id="receipt-sub-text">
           Your payment was processed successfully. Below you'll find your instant kit download, installation guide, and receipt details.
         </p>
       </div>
 
-      <!-- Main Action: Download ZIP -->
-      <div class="pt-4 max-w-sm mx-auto space-y-3">
-        <a href="/api/download/client-onboarding-kit" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-indigo/15 text-sm transition">
+      <!-- Main Action: Download ZIP (Hidden for setup-service) -->
+      <div class="pt-4 max-w-sm mx-auto space-y-3" id="download-container">
+        <a href="/api/download/client-onboarding-kit" id="download-btn" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-indigo/15 text-sm transition">
           📥 Download Client Onboarding Kit (.ZIP)
         </a>
-        <p class="text-[10px] text-brand-muted">
+        <p class="text-[10px] text-brand-muted" id="download-desc">
           Contains: Make Scenario JSON, Proposal templates, Google Forms schema, Welcome emails.
         </p>
       </div>
     </div>
 
-    <!-- Gateway Portal Setup Steps -->
-    <section class="space-y-8">
-      <div>
-        <h2 class="text-2xl font-bold text-brand-ink">TinyOps Onboarding Gateway Portal</h2>
-        <p class="text-sm text-brand-muted">Follow these 3 quick steps to automate your client onboarding in under 15 minutes.</p>
+    <!-- Onboarding Questionnaire Card (Visible ONLY for setup-service) -->
+    <section id="questionnaire-section" class="hidden bg-white border border-brand-border rounded-3xl p-8 md:p-12 space-y-8 shadow-md">
+      <div class="border-b border-brand-border pb-6 space-y-2">
+        <span class="bg-brand-indigo text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Step 1 of 3</span>
+        <h2 class="text-3xl font-black text-brand-ink">TinyOps Setup Questionnaire</h2>
+        <p class="text-sm text-brand-muted">Please fill in your business parameters and tool requirements. Our developers will use these details to configure your workflows securely.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Step 1 -->
-        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
-          <span class="absolute top-4 right-4 text-3xl font-black text-brand-border">01</span>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-indigo">Required Step</p>
-          <h3 class="text-lg font-bold text-brand-ink">Import Blueprint</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Create a free account on Make.com. Inside your workspace, click "New Scenario", choose "Import Blueprint" from the options menu, and upload the <code>scenario-blueprint.json</code> found in your downloaded ZIP folder.
-          </p>
+      <!-- Questionnaire Form -->
+      <form id="onboarding-form" class="space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-brand-ink uppercase tracking-wider">Company/Business Name</label>
+            <input type="text" id="q-business-name" required placeholder="My Agency Ltd" class="w-full bg-brand-cream border border-brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo/20 focus:border-brand-indigo transition">
+          </div>
+          <div class="space-y-1">
+            <label class="text-xs font-bold text-brand-ink uppercase tracking-wider">Contact Email (Admin)</label>
+            <input type="email" id="q-email" required placeholder="admin@domain.com" class="w-full bg-brand-cream border border-brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo/20 focus:border-brand-indigo transition">
+          </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
-          <span class="absolute top-4 right-4 text-3xl font-black text-brand-border">02</span>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-indigo">Required Step</p>
-          <h3 class="text-lg font-bold text-brand-ink">Duplicate Notion CRM</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Open the <code>templates/notion-crm-template.md</code> file inside your downloaded ZIP, click the provided Notion duplication link, and click "Duplicate" in the upper right to copy the pre-built Client CRM directly to your Workspace.
-          </p>
+        <div class="space-y-2 pt-2">
+          <label class="text-xs font-bold text-brand-ink uppercase tracking-wider block">Kits to Install & Connect (Select Up to 3)</label>
+          <div class="grid sm:grid-cols-2 gap-3 text-xs text-brand-muted">
+            <label class="flex items-center space-x-2 bg-brand-sand/40 border border-brand-border rounded-xl p-3 cursor-pointer hover:border-brand-indigo/40 transition">
+              <input type="checkbox" checked class="rounded border-brand-border text-brand-indigo focus:ring-brand-indigo" value="client-onboarding">
+              <span class="font-semibold text-brand-ink">Client Onboarding Kit (Flagship)</span>
+            </label>
+            <label class="flex items-center space-x-2 bg-brand-sand/40 border border-brand-border rounded-xl p-3 cursor-pointer hover:border-brand-indigo/40 transition">
+              <input type="checkbox" checked class="rounded border-brand-border text-brand-indigo focus:ring-brand-indigo" value="invoice-follow-up">
+              <span class="font-semibold text-brand-ink">Invoice Follow-Up Kit (New Release)</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
-          <span class="absolute top-4 right-4 text-3xl font-black text-brand-border">03</span>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-indigo">Required Step</p>
-          <h3 class="text-lg font-bold text-brand-ink">Connect Accounts</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Click on each module inside your imported Make.com scenario (Gmail, Google Forms, Notion) and click "Add connection" to grant secure access to your accounts. Click "Save" and turn the scenario "ON"!
-          </p>
+        <div class="space-y-2 pt-2">
+          <label class="text-xs font-bold text-brand-ink uppercase tracking-wider block">Your Tool Stack (Select All Used)</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-brand-muted">
+            <label class="flex items-center space-x-2"><input type="checkbox" checked class="rounded text-brand-indigo"> <span>Notion</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" checked class="rounded text-brand-indigo"> <span>Make.com</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" checked class="rounded text-brand-indigo"> <span>Gmail</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" checked class="rounded text-brand-indigo"> <span>Stripe</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" class="rounded text-brand-indigo"> <span>PayPal</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" class="rounded text-brand-indigo"> <span>QuickBooks</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" class="rounded text-brand-indigo"> <span>Calendly</span></label>
+            <label class="flex items-center space-x-2"><input type="checkbox" class="rounded text-brand-indigo"> <span>PandaDoc</span></label>
+          </div>
         </div>
+
+        <div class="space-y-1 pt-2">
+          <label class="text-xs font-bold text-brand-ink uppercase tracking-wider">Custom Automation Goals / Packages (Optional)</label>
+          <textarea id="q-goals" placeholder="Describe any specific service packages or customized properties you would like configured..." rows="3" class="w-full bg-brand-cream border border-brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo/20 focus:border-brand-indigo transition"></textarea>
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-brand-border">
+          <label class="text-xs font-bold text-brand-ink uppercase tracking-wider block">Security Connection Preference</label>
+          <div class="grid sm:grid-cols-2 gap-4 text-xs text-brand-muted">
+            <label class="flex items-start space-x-3 bg-brand-sand/30 border border-brand-border rounded-xl p-4 cursor-pointer hover:border-brand-indigo/40 transition">
+              <input type="radio" checked name="connection" value="credentials" class="mt-0.5 text-brand-indigo focus:ring-brand-indigo">
+              <div>
+                <p class="font-bold text-brand-ink">Temporary Logins (Recommended)</p>
+                <p class="mt-0.5">Provide secure, temporary access credentials. You will change your passwords immediately following setup hand-off.</p>
+              </div>
+            </label>
+
+            <label class="flex items-start space-x-3 bg-brand-sand/30 border border-brand-border rounded-xl p-4 cursor-pointer hover:border-brand-indigo/40 transition">
+              <input type="radio" name="connection" value="screenshare" class="mt-0.5 text-brand-indigo focus:ring-brand-indigo">
+              <div>
+                <p class="font-bold text-brand-ink">30-Min Zoom Session</p>
+                <p class="mt-0.5">Schedule a shared screen Zoom call with our team. We will guide you to authorize your OAuth nodes live.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit" id="form-submit-btn" class="w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-indigo/15 text-sm transition">
+            Submit Setup Questionnaire →
+          </button>
+        </div>
+      </form>
+
+      <!-- Questionnaire Post-Submission State (Initially Hidden) -->
+      <div id="form-success-container" class="hidden text-center space-y-6 py-6 animate-fadeIn">
+        <div class="w-16 h-16 bg-brand-emerald text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto">✓</div>
+        <div class="space-y-2">
+          <h3 class="text-2xl font-black text-brand-ink">Questionnaire Submitted Successfully!</h3>
+          <p class="text-sm text-brand-muted max-w-md mx-auto">We've received your business requirements. Next, let's connect your accounts and book your call.</p>
+        </div>
+        
+        <div class="max-w-md mx-auto bg-brand-sand/40 border border-brand-border rounded-2xl p-6 text-left space-y-4">
+          <p class="text-xs font-bold text-brand-ink uppercase tracking-wider text-center border-b border-brand-border pb-3">Onboarding Roadmap Completed:</p>
+          <div class="space-y-3 text-xs text-brand-muted">
+            <p class="flex items-center">🟢 <span class="ml-2 font-semibold text-brand-ink">Step 1: Questionnaire Complete</span></p>
+            <p class="flex items-center">🟡 <span class="ml-2 font-semibold text-brand-ink">Step 2: Schedule connection call / share logins</span></p>
+            <p class="flex items-center">⚪ <span class="ml-2">Step 3: Setup & Delivery in under 48 hours</span></p>
+          </div>
+        </div>
+
+        <div class="pt-4 max-w-sm mx-auto space-y-3">
+          <a href="/home/team/shared/setup-service/scope-of-work.md" class="block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white font-bold py-4 rounded-xl text-sm shadow-md transition" target="_blank">
+            📥 Download Official Setup SOW (.MD)
+          </a>
+          <button onclick="alert('Demo Mode: booking widget initialized!')" class="block w-full bg-brand-sand hover:bg-brand-border/40 text-brand-ink border border-brand-border font-bold py-4 rounded-xl text-sm transition">
+            📅 Book Your 30-Min Zoom Session
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gateway Portal Setup Steps (Dynamic based on product) -->
+    <section class="space-y-8" id="steps-section">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-ink" id="steps-title">TinyOps Onboarding Gateway Portal</h2>
+        <p class="text-sm text-brand-muted" id="steps-subtitle">Follow these 3 quick steps to automate your client onboarding in under 15 minutes.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" id="steps-grid">
+        <!-- Steps will be injected dynamically via JS -->
       </div>
     </section>
 
     <!-- Simulated Automation Logs (Required by task) -->
     <section class="space-y-6">
       <div class="border-t border-brand-border pt-8">
-        <h2 class="text-2xl font-bold text-brand-ink">Simulated Automation: Delivery success Log</h2>
-        <p class="text-sm text-brand-muted mt-1">This panel displays real-time logs indicating that the TinyOps checkout system has fired, sent your payment receipt, and triggered your automated onboarding email sequence.</p>
+        <h2 class="text-2xl font-bold text-brand-ink">Simulated Automation: Delivery Success Log</h2>
+        <p class="text-sm text-brand-muted mt-1">This panel displays real-time logs indicating that the TinyOps checkout system has fired, generated your license key, and initialized your automation sequences.</p>
       </div>
 
       <div class="bg-brand-ink text-brand-cream rounded-2xl p-6 md:p-8 font-mono text-xs space-y-6 border border-brand-border shadow-xl">
-        <div class="space-y-2 border-b border-white/10 pb-4 text-brand-muted">
-          <p class="flex items-center"><span class="text-brand-emerald mr-2">🟢</span> [SYSTEM] Payment transaction authorized successfully.</p>
-          <p class="flex items-center"><span class="text-brand-indigo mr-2">✦</span> [DELIVERY] Delivery bundle generated for: <span class="text-brand-cream ml-1" id="log-email">you@example.com</span></p>
-          <p class="flex items-center"><span class="text-brand-emerald mr-2">🟢</span> [EMAIL] Delivery receipt email queued and sent successfully.</p>
-          <p class="flex items-center"><span class="text-brand-emerald mr-2">🟢</span> [SEQUENCE] Onboarding email auto-sequence (3 steps) initiated.</p>
+        <div class="space-y-2 border-b border-white/10 pb-4 text-brand-muted" id="simulated-logs">
+          <!-- Logs will be injected dynamically via JS -->
         </div>
 
         <!-- Email Tabs -->
@@ -164,18 +243,7 @@
           <p class="font-bold uppercase tracking-wider text-[10px] text-brand-muted">Simulated Onboarding Sequence Emails Sent:</p>
           
           <div class="grid sm:grid-cols-3 gap-3" id="email-tabs">
-            <button onclick="switchEmail(0)" id="btn-email-0" class="p-3 rounded-lg border border-brand-indigo bg-brand-indigo/10 text-brand-cream text-left font-semibold">
-              📧 Email 1 (Immediate)
-              <span class="block text-[9px] text-brand-muted mt-0.5">Welcome + Setup Portal</span>
-            </button>
-            <button onclick="switchEmail(1)" id="btn-email-1" class="p-3 rounded-lg border border-white/10 hover:border-white/20 text-brand-muted text-left font-semibold">
-              📧 Email 2 (+24 Hours)
-              <span class="block text-[9px] text-brand-muted mt-0.5">Automated Booking Link</span>
-            </button>
-            <button onclick="switchEmail(2)" id="btn-email-2" class="p-3 rounded-lg border border-white/10 hover:border-white/20 text-brand-muted text-left font-semibold">
-              📧 Email 3 (+48 Hours)
-              <span class="block text-[9px] text-brand-muted mt-0.5">Pre-Work & Resources</span>
-            </button>
+            <!-- Tabs will be injected dynamically via JS -->
           </div>
 
           <!-- Email Content Panel -->
@@ -183,7 +251,7 @@
             <div class="space-y-1 text-brand-muted pb-3 border-b border-white/5">
               <p><strong>To:</strong> <span class="text-brand-cream" id="email-view-to">you@example.com</span></p>
               <p><strong>From:</strong> TinyOps Automated Delivery &lt;hello@tinyops.com&gt;</p>
-              <p><strong>Subject:</strong> <span class="text-brand-emerald font-bold" id="email-view-subject">Your TinyOps Purchase: Client Onboarding Kit Onboarding Portal</span></p>
+              <p><strong>Subject:</strong> <span class="text-brand-emerald font-bold" id="email-view-subject">Your TinyOps Purchase</span></p>
             </div>
             <div class="text-brand-cream/90 leading-relaxed whitespace-pre-wrap text-[11px] font-mono h-48 overflow-y-auto" id="email-view-body">
               Email body loading...
@@ -209,45 +277,298 @@
     const name = params.get('name') || 'Valued Customer';
     const email = params.get('email') || 'customer@example.com';
     const txn = params.get('txn') || 'txn_987654321';
+    const item = params.get('item') || 'client-onboarding';
 
     document.getElementById('greeting-title').textContent = `Welcome to TinyOps, ${name}!`;
-    document.getElementById('log-email').textContent = email;
 
-    // Simulated email body copies
-    const emailSequence = [
-      {
-        subject: "Your TinyOps Purchase: Client Onboarding Kit Onboarding Portal",
-        body: `Hi ${name},\n\nThank you for choosing TinyOps! We're excited to help you automate your operations and save 10+ hours every single week.\n\nYour order details:\n- Product: Client Onboarding Kit\n- Price: $67.00\n- Transaction ID: ${txn}\n\nHere is your permanent access link to duplicate your new Client Onboarding Notion Gateway CRM:\n👉 https://notion.so/tinyops/client-onboarding-portal-duplicate\n\nYou can also download the ZIP archive of your blueprints directly from your Success screen.\n\nNeed any help with installation? Shoot us a message at hello@tinyops.com or schedule a DFY setup in your dashboard!\n\nTo your productivity,\nTinyOps Team`
+    // References to DOM elements
+    const downloadBtn = document.getElementById('download-btn');
+    const downloadDesc = document.getElementById('download-desc');
+    const downloadContainer = document.getElementById('download-container');
+    const questionnaireSection = document.getElementById('questionnaire-section');
+    const stepsSection = document.getElementById('steps-section');
+    const stepsTitle = document.getElementById('steps-title');
+    const stepsSubtitle = document.getElementById('steps-subtitle');
+    const stepsGrid = document.getElementById('steps-grid');
+    const simulatedLogs = document.getElementById('simulated-logs');
+    const emailTabs = document.getElementById('email-tabs');
+    const receiptSubText = document.getElementById('receipt-sub-text');
+
+    // Data maps for dynamic products
+    const productData = {
+      'client-onboarding': {
+        title: "Client Onboarding Kit Onboarding Portal",
+        receipt: "Your payment was processed successfully. Below you'll find your instant Client Onboarding Kit download, installation guide, and receipt details.",
+        btnText: "📥 Download Client Onboarding Kit (.ZIP)",
+        btnUrl: "/api/download/client-onboarding-kit",
+        desc: "Contains: Make Scenario JSON, Proposal templates, Google Forms schema, Welcome emails.",
+        steps: [
+          { num: "01", category: "Required Step", title: "Import Blueprint", text: "Create a free account on Make.com. Inside your workspace, click 'New Scenario', choose 'Import Blueprint' from the options menu, and upload the scenario-blueprint.json found in your downloaded ZIP folder." },
+          { num: "02", category: "Required Step", title: "Duplicate Notion CRM", text: "Open templates/notion-crm-template.md inside your downloaded ZIP, click the provided Notion duplication link, and click 'Duplicate' in the upper right to copy the CRM." },
+          { num: "03", category: "Required Step", title: "Connect Accounts", text: "Click on each module inside your imported Make.com scenario (Gmail, Google Forms, Notion) and add OAuth connections. Click Save and turn scenario ON!" }
+        ],
+        logs: [
+          "🟢 [SYSTEM] Payment transaction authorized successfully.",
+          "✦ [DELIVERY] Delivery bundle generated for client-onboarding-kit.",
+          "🟢 [EMAIL] Delivery receipt email queued and sent successfully.",
+          "🟢 [SEQUENCE] Onboarding welcome email auto-sequence (3 steps) initiated."
+        ],
+        emails: [
+          {
+            tab: "📧 Email 1 (Immediate)",
+            subTab: "Welcome + Setup Portal",
+            subject: "Your TinyOps Purchase: Client Onboarding Kit Portal",
+            body: `Hi ${name},\n\nThank you for choosing TinyOps! We're excited to help you automate your operations.\n\nYour order details:\n- Product: Client Onboarding Kit\n- Price: $67.00\n- Transaction ID: ${txn}\n\nHere is your permanent access link to duplicate your new Client Onboarding Notion Gateway CRM:\n👉 https://notion.so/tinyops/client-onboarding-portal-duplicate\n\nYou can also download the ZIP archive of your blueprints directly from your Success screen.\n\nNeed any help? Shoot us a message at hello@tinyops.com.\n\nTo your productivity,\nTinyOps Team`
+          },
+          {
+            tab: "📧 Email 2 (+24 Hours)",
+            subTab: "Automated Booking Link",
+            subject: "Step 2/3: Set up your automated booking calendar",
+            body: `Hi ${name},\n\nWe hope your Client Onboarding Kit is looking amazing in Notion!\n\nStep 2 is setting up your automated client scheduling link. This ensures that the moment a lead signs your proposal, they are automatically redirected to schedule their kick-off meeting without any manual back-and-forth.\n\nHere are your resources:\n1. Create your free Calendly account: https://calendly.com/tinyops\n2. Embed the scheduling trigger in Gmail using Section 4 of our setup-guide.\n\nBest,\nTinyOps Team`
+          },
+          {
+            tab: "📧 Email 3 (+48 Hours)",
+            subTab: "Pre-Work & Resources",
+            subject: "Step 3/3: Automated Intake Questionnaire & Pre-Work",
+            body: `Hi ${name},\n\nToday we're completing the loop. Once your client books their kick-off, the automation must automatically request their assets (logos, credentials, contact cards).\n\nInside your downloaded ZIP under the templates/ folder, open intake-form-questions.md. Copy-paste these questions directly into a free Google Form and link it as module #3 inside your Make scenario.\n\nYour client onboarding loop is now 100% automated!\n\nCheers,\nTinyOps Team`
+          }
+        ]
       },
-      {
-        subject: "Step 2/3: Set up your automated booking calendar",
-        body: `Hi ${name},\n\nWe hope your Client Onboarding Kit is looking amazing in Notion!\n\nStep 2 of the 15-Minute Blueprint is setting up your automated client scheduling link. This ensures that the moment a lead signs your onboarding proposal, they are automatically redirected to schedule their kick-off meeting without any manual emails back-and-forth.\n\nHere are your resources:\n1. Create your free Calendly account: https://calendly.com/tinyops\n2. Embed the scheduling trigger in Gmail using Section 4 of our setup-guide.\n\nTomorrow, we will send over our highly optimized Pre-Work Template to gather your clients' assets on autopilot!\n\nBest,\nTinyOps Team`
+      'invoice-follow-up': {
+        title: "Invoice Follow-Up Kit Delivery Hub",
+        receipt: "Your payment was processed successfully. Below you'll find your instant Invoice Follow-Up Kit download, configuration steps, and receipt details.",
+        btnText: "📥 Download Invoice Follow-Up Kit (.ZIP)",
+        btnUrl: "/api/download/invoice-follow-up-kit",
+        desc: "Contains: Overdue Tracker Sheet structure, 6x Reminder emails, Make.com Auto-Reminders blueprints.",
+        steps: [
+          { num: "01", category: "Required Step", title: "Set Up Tracking Sheet", text: "Create a copy of our templates/invoice-tracking-sheet.md template in Google Sheets. Customize drop-down status cells: Unpaid, R1 Sent, Overdue, Paid." },
+          { num: "02", category: "Required Step", title: "Import Overdue Blueprints", text: "Import the Make.com scenario blueprint code into your account. This connects your invoice processor (Stripe, QuickBooks) with your Google Sheets tracker." },
+          { num: "03", category: "Required Step", title: "Map Email Triggers", text: "Authenticate your Gmail and authorize the automatic filters. This ensures polite reminder sequences trigger on schedule ONLY if invoice remains 'Unpaid'." }
+        ],
+        logs: [
+          "🟢 [SYSTEM] Payment transaction authorized successfully.",
+          "✦ [DELIVERY] Delivery bundle generated for invoice-follow-up-kit.",
+          "🟢 [EMAIL] Delivery receipt email queued and sent successfully.",
+          "🟢 [DATABASE] Synced invoice overdue spreadsheet mapping and initialized listener."
+        ],
+        emails: [
+          {
+            tab: "📧 Email 1 (Day 3 Overdue)",
+            subTab: "Friendly Reminder",
+            subject: "Friendly Reminder: Invoice #1024 — TinyOps",
+            body: `Hi ${name},\n\nWe hope you are well.\n\nThis is a quick, friendly note to remind you that Invoice #1024 which we sent on Day 1 is now slightly overdue. We understand how things can get lost in the shuffle!\n\nYou can review your invoice and make a secure card payment directly here:\n👉 https://tinyops.com/receipt/mock-1024\n\nIf you have already processed payment, please ignore this note.\n\nBest regards,\nTinyOps Accounts`
+          },
+          {
+            tab: "📧 Email 2 (Day 7 Overdue)",
+            subTab: "Gentle Nudge",
+            subject: "Gentle Nudge: Outstanding Invoice #1024",
+            body: `Hi ${name},\n\nWe haven't received payment for Invoice #1024 ($67.00) yet. Could you please check with your accounts department to see when we can expect this cleared?\n\nSecure payment link:\n👉 https://tinyops.com/receipt/mock-1024\n\nIf you need to discuss payment terms, please reach out to hello@tinyops.com.\n\nSincerely,\nTinyOps Billing`
+          },
+          {
+            tab: "📧 Email 3 (Day 21 Overdue)",
+            subTab: "Urgent Escalation",
+            subject: "Urgent: Final Notice for Outstanding Invoice #1024",
+            body: `Hi ${name},\n\nThis is our final notice regarding outstanding Invoice #1024. Your account has now been overdue for 21 days.\n\nPlease arrange card payment immediately to avoid collection escalation and project suspension:\n👉 https://tinyops.com/receipt/mock-1024\n\nWe expect this settled within 48 hours.\n\nRegards,\nTinyOps CEO Accounts Office`
+          }
+        ]
       },
-      {
-        subject: "Step 3/3: Automated Intake Questionnaire & Pre-Work",
-        body: `Hi ${name},\n\nToday we're completing the loop. Once your client books their kick-off meeting, the automation must automatically request their assets (logos, logins, forms, contact cards) before the call.\n\nInside your downloaded ZIP under the <code>templates/</code> folder, open <code>templates/intake-form-questions.md</code>. Copy-paste these questions directly into a free Google Form and link it as module #3 inside your Make.com scenario blueprint.\n\nYour client onboarding loop is now 100% complete and automated. You can now onboard unlimited clients completely hands-free!\n\nIf you enjoyed this, upgrade to the All-Access Bundle for lifetime access to every kit we build!\n\nCheers,\nTinyOps Team`
+      'all-access-lifetime': {
+        title: "All-Access Lifetime Member Gateway",
+        receipt: "Welcome to All-Access Lifetime, our most elite membership tier. Below you'll find your consolidated All-Access ZIP download, central Notion Member Hub, and receipt details.",
+        btnText: "📥 Download All-Access Bundle (.ZIP)",
+        btnUrl: "/api/download/all-access-bundle",
+        desc: "Contains: Client Onboarding Kit + Invoice Follow-Up Kit + Welcome guidelines. Lifetime free updates.",
+        steps: [
+          { num: "01", category: "Elite Step", title: "Duplicate Member Dashboard", text: "Replicate our central Notion All-Access Member Dashboard. This serves as your central repository to duplicate Notion template blueprints and fetch upcoming kits instantly." },
+          { num: "02", category: "Elite Step", title: "Extract Bundle Folders", text: "Open the downloaded All-Access ZIP. You will find dedicated sub-folders for Client Onboarding and Invoice Follow-Up with scenario JSON blueprints." },
+          { num: "03", category: "Elite Step", title: "Join Slack Workspace", text: "Check your welcome email to join our private member-only Slack workspace. Network with other automated business owners and enjoy 12-hr priority support." }
+        ],
+        logs: [
+          "🟢 [SYSTEM] Lifetime subscription transaction authorized successfully.",
+          "✦ [LICENSE] Registered elite LIFETIME License Key for member.",
+          "🟢 [PORTAL] Synced All-Access Dashboard and created Circle Community profile.",
+          "🟢 [EMAIL] Sent welcome packet, community credentials, and dashboard token."
+        ],
+        emails: [
+          {
+            tab: "📧 Email 1 (Welcome Packet)",
+            subTab: "All-Access Credentials",
+            subject: "Welcome to TinyOps All-Access: Dashboard & Slack Community Access",
+            body: `Hi ${name},\n\nYou are officially an All-Access Member!\n\nThis means you have permanent, lifetime access to every operational automation kit we have built, and every kit we build in the future.\n\nHere are your access details:\n1. Duplicate Central Notion Member Hub:\n👉 https://notion.so/tinyops/all-access-member-dashboard-duplicate\n2. Join our Private Slack Community Workspace:\n👉 https://slack.com/tinyops-community-invite\n3. Use your developer priority support email:\n👉 priority-support@tinyops.com (12-hour responses guaranteed!)\n\nTo your productivity,\nTinyOps Team`
+          },
+          {
+            tab: "📧 Email 2 (Kit 1 Guide)",
+            subTab: "Launch Client Onboarding",
+            subject: "All-Access Kit #1: Automating your Client Onboarding in 15 Min",
+            body: `Hi ${name},\n\nLet's get your first automation scenario rolling.\n\nWe recommend starting with the Client Onboarding Kit. This duplicates a Client CRM into your Notion, sets up your intake Google form, and connects dynamic Gmail welcome templates.\n\nAll blueprint scenarios are in your downloaded All-Access ZIP under `/client-onboarding-kit/`.\n\nSetup Guide link:\n👉 https://tinyops.com/kits/client-onboarding\n\nNeed help? Email priority-support@tinyops.com!\n\nBest,\nTinyOps Team`
+          },
+          {
+            tab: "📧 Email 3 (Kit 2 Guide)",
+            subTab: "Chasing Late Payments",
+            subject: "All-Access Kit #2: Eliminate Late Payments with Invoice Follow-Ups",
+            body: `Hi ${name},\n\nReady for Kit #2?\n\nToday we're automating your bookkeeping. Link Stripe or PayPal to a tracking Google Sheet, deploy 3 overdue reminder drafts on schedule, and auto-archive client PDF receipts in Google Drive.\n\nBlueprints are in your ZIP under `/invoice-follow-up-kit/`.\n\nSetup Guide link:\n👉 https://tinyops.com/kits/invoice-follow-up\n\nLet's put your payments on autopilot!\n\nCheers,\nTinyOps Team`
+          }
+        ]
+      },
+      'setup-service': {
+        title: "Done-For-You Setup Service Scheduled",
+        receipt: "Your setup service booking was processed successfully. Below you'll find the Scope of Work contract, your team checklist, and your onboarding questionnaire.",
+        btnText: "",
+        btnUrl: "",
+        desc: "",
+        steps: [
+          { num: "01", category: "Questionnaire", title: "Complete Form", text: "Complete the interactive setup questionnaire below detailing your packages, primary tools, and email parameters. This is required before our developers can begin configuration." },
+          { num: "02", category: "Account Hook", title: "Grant Temporary Access", text: "Choose to share temporary credentials securely (resetting them post-setup) or schedule a 30-min Zoom screen-share to authorize your Make.com OAuth nodes." },
+          { num: "03", category: "Delivery", title: "48-Hour Deployment", text: "Our team duplicates templates, customizes database views with your branding, imports scenario nodes, performs end-to-end dry testing, and delivers your walkthrough Loom." }
+        ],
+        logs: [
+          "🟢 [SYSTEM] Setup Service payment authorized ($247.00).",
+          "✦ [TICKET] Registered new DFY Setup Client ticket in team admin db.",
+          "🟢 [TEAM] Assigned Senior Automation Developer to setup project.",
+          "🟡 [WAITING] Standing by for client onboarding questionnaire submission..."
+        ],
+        emails: [
+          {
+            tab: "📧 Email 1 (Receipt & Booking)",
+            subTab: "Invoice + Next Steps",
+            subject: "TinyOps DFY Setup: Invoice Receipt & Next Steps Checklist",
+            body: `Hi ${name},\n\nWe've received your Done-For-You Setup payment. Thank you! We can't wait to launch your automated business engine.\n\nYour order details:\n- Service: Flat-Rate Done-For-You Setup Service\n- Price: $247.00\n- Status: Billed / Assigned to Developer\n\nNext Steps Checklist:\n1. Fill in your Onboarding Questionnaire immediately on your Success page.\n2. Schedule your Zoom screen-share call or provide temporary credentials.\n\nBooking Calendar Link:\n👉 https://calendly.com/tinyops/setup-zoom\n\nSincerely,\nTinyOps Setup Team`
+          },
+          {
+            tab: "📧 Email 2 (Official SOW Agreement)",
+            subTab: "Setup Scope Contract",
+            subject: "Your TinyOps Setup Agreement: Scope of Work (SOW)",
+            body: `Hi ${name},\n\nWe operate with professional transparency. Attached you will find our standard Scope of Work (SOW) agreement for the Done-For-You setup service.\n\nThis contract details:\n- Inclusions: up to 3 kits configuration, custom logo database cover branding, full dry-run testing.\n- Exclusions: no migration of massive historic customer records.\n- GDPR-compliant exit privacy safety protocols.\n\nYou can read the full raw markdown scope here:\n👉 /home/team/shared/setup-service/scope-of-work.md\n\nLet us know if you have any questions.\n\nBest,\nTinyOps Team`
+          },
+          {
+            tab: "📧 Email 3 (Private Slack Support)",
+            subTab: "Community Support Line",
+            subject: "Your Private Support Slack Invite & Onboarding Line",
+            body: `Hi ${name},\n\nTo ensure your transition into automated Operations is 100% seamless, we've set up an onboarding support line.\n\nAs part of your service package, you receive 30 Days of Free Priority support via our private Slack community.\n\nJoin our community workspace here:\n👉 https://slack.com/tinyops-community-invite\n\nOnce setup is complete, our senior developer will post your personalized 5-minute walkthrough Loom video inside this Slack channel!\n\nCheers,\nTinyOps Setup Team`
+          }
+        ]
       }
-    ];
+    };
 
-    function switchEmail(idx) {
-      // Switch active tab styling
-      for (let i = 0; i < 3; i++) {
+    // Treat 'all-access-annual' same as lifetime but adjust texts
+    productData['all-access-annual'] = JSON.parse(JSON.stringify(productData['all-access-lifetime']));
+    productData['all-access-annual'].title = "All-Access Annual Member Gateway";
+    productData['all-access-annual'].receipt = "Welcome to All-Access Annual, our most popular flexible membership plan. Below you'll find your consolidated All-Access ZIP download, central Notion Member Hub, and receipt details.";
+
+    // Get current product data
+    const activeProduct = productData[item] || productData['client-onboarding'];
+
+    // Update Banner & Text
+    receiptSubText.textContent = activeProduct.receipt;
+
+    // Render Download Block
+    if (item === 'setup-service') {
+      downloadContainer.classList.add('hidden');
+      questionnaireSection.classList.remove('hidden');
+      stepsTitle.textContent = "TinyOps Done-For-You Roadmap";
+      stepsSubtitle.textContent = "Follow these 3 quick milestones to get your operational stack configured on autopilot.";
+    } else {
+      downloadBtn.textContent = activeProduct.btnText;
+      downloadBtn.href = activeProduct.btnUrl;
+      downloadDesc.textContent = activeProduct.desc;
+    }
+
+    // Render Onboarding Steps
+    let stepsHtml = "";
+    activeProduct.steps.forEach(s => {
+      stepsHtml += `
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 space-y-3 relative">
+          <span class="absolute top-4 right-4 text-3xl font-black text-brand-border">${s.num}</span>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-indigo">${s.category}</p>
+          <h3 class="text-lg font-bold text-brand-ink">${s.title}</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">${s.text}</p>
+        </div>
+      `;
+    });
+    stepsGrid.innerHTML = stepsHtml;
+
+    // Render Simulated Logs
+    let logsHtml = "";
+    activeProduct.logs.forEach(l => {
+      logsHtml += `<p class="flex items-center">${l}</p>`;
+    });
+    simulatedLogs.innerHTML = logsHtml;
+
+    // Render Email Tabs
+    let tabsHtml = "";
+    activeProduct.emails.forEach((e, idx) => {
+      tabsHtml += `
+        <button onclick="switchEmail(${idx})" id="btn-email-${idx}" class="p-3 rounded-lg border border-white/10 hover:border-white/20 text-brand-muted text-left font-semibold text-xs transition">
+          ${e.tab}
+          <span class="block text-[9px] text-brand-muted mt-0.5">${e.subTab}</span>
+        </button>
+      `;
+    });
+    emailTabs.innerHTML = tabsHtml;
+
+    // Email Switch Function
+    window.switchEmail = function(idx) {
+      const totalEmails = activeProduct.emails.length;
+      for (let i = 0; i < totalEmails; i++) {
         const btn = document.getElementById(`btn-email-${i}`);
         if (i === idx) {
-          btn.className = "p-3 rounded-lg border border-brand-indigo bg-brand-indigo/10 text-brand-cream text-left font-semibold text-xs";
+          btn.className = "p-3 rounded-lg border border-brand-indigo bg-brand-indigo/10 text-brand-cream text-left font-semibold text-xs transition";
         } else {
-          btn.className = "p-3 rounded-lg border border-white/10 hover:border-white/20 text-brand-muted text-left font-semibold text-xs";
+          btn.className = "p-3 rounded-lg border border-white/10 hover:border-white/20 text-brand-muted text-left font-semibold text-xs transition";
         }
       }
 
-      // Load email data
       document.getElementById('email-view-to').textContent = email;
-      document.getElementById('email-view-subject').textContent = emailSequence[idx].subject;
-      document.getElementById('email-view-body').textContent = emailSequence[idx].body;
+      document.getElementById('email-view-subject').textContent = activeProduct.emails[idx].subject;
+      document.getElementById('email-view-body').textContent = activeProduct.emails[idx].body;
     }
 
-    // Initialize with first email
+    // Initialize Switch
     switchEmail(0);
+
+    // Setup Questionnaire Submission Mock
+    const onboardingForm = document.getElementById('onboarding-form');
+    const formSuccessContainer = document.getElementById('form-success-container');
+    const formSubmitBtn = document.getElementById('form-submit-btn');
+
+    if (onboardingForm) {
+      onboardingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Show loading state
+        formSubmitBtn.disabled = true;
+        formSubmitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Processing Your Setup Details...
+        `;
+
+        setTimeout(() => {
+          // Hide form and show success screen
+          onboardingForm.classList.add('hidden');
+          formSuccessContainer.classList.remove('hidden');
+          
+          // Modify simulated logs to show questionnaire received!
+          const updatedLogs = [
+            "🟢 [SYSTEM] Setup Service payment authorized ($247.00).",
+            "✦ [TICKET] Registered new DFY Setup Client ticket in team admin db.",
+            "🟢 [TEAM] Assigned Senior Automation Developer to setup project.",
+            "🟢 [QUESTIONNAIRE] Client onboarding questionnaire received successfully!",
+            "🟢 [SYSTEM] Generated secure API token for setup environment.",
+            "🟢 [EMAIL] Sent official SOW contract packet to: " + email,
+            "🟢 [SLACK] Invited " + email + " to Private Slack workspace.",
+            "🟢 [ZOOM] Standing by for booked connection call / credential hook..."
+          ];
+          let updatedLogsHtml = "";
+          updatedLogs.forEach(l => {
+            updatedLogsHtml += `<p class="flex items-center">${l}</p>`;
+          });
+          simulatedLogs.innerHTML = updatedLogsHtml;
+        }, 1500);
+      });
+    }
   </script>
 
 </body>
