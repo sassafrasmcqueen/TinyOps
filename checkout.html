@@ -172,9 +172,10 @@
   </div>
 
   <script>
-    // Grab item type from query parameter to make checkout dynamic
+    // Grab item type and plan from query parameters to make checkout dynamic
     const params = new URLSearchParams(window.location.search);
     const item = params.get('item') || 'client-onboarding';
+    const plan = params.get('plan') || 'lifetime';
 
     const itemTitle = document.getElementById('item-title');
     const itemPrice = document.getElementById('item-price');
@@ -182,14 +183,42 @@
     const totalVal = document.getElementById('total-val');
     const btnPriceLabel = document.getElementById('btn-price-label');
     const formItemInput = document.getElementById('form-item-input');
+    const summaryLabel = document.getElementById('summary-label');
 
     if (item === 'all-access') {
-      formItemInput.value = 'all-access-bundle';
-      itemTitle.textContent = 'All-Access Bundle';
-      itemPrice.textContent = '$297.00';
-      subtotalVal.textContent = '$297.00';
-      totalVal.textContent = '$297.00';
-      btnPriceLabel.textContent = '$297.00';
+      if (plan === 'annual') {
+        formItemInput.value = 'all-access-annual';
+        itemTitle.textContent = 'All-Access Bundle (Annual)';
+        itemPrice.textContent = '$197.00';
+        subtotalVal.textContent = '$197.00';
+        totalVal.textContent = '$197.00';
+        btnPriceLabel.textContent = '$197.00';
+        summaryLabel.textContent = 'Pay TinyOps (Subscription)';
+      } else {
+        formItemInput.value = 'all-access-lifetime';
+        itemTitle.textContent = 'All-Access Bundle (Lifetime)';
+        itemPrice.textContent = '$297.00';
+        subtotalVal.textContent = '$297.00';
+        totalVal.textContent = '$297.00';
+        btnPriceLabel.textContent = '$297.00';
+        summaryLabel.textContent = 'Pay TinyOps (Lifetime)';
+      }
+    } else if (item === 'invoice-follow-up') {
+      formItemInput.value = 'invoice-follow-up';
+      itemTitle.textContent = 'Invoice Follow-Up Kit';
+      itemPrice.textContent = '$67.00';
+      subtotalVal.textContent = '$67.00';
+      totalVal.textContent = '$67.00';
+      btnPriceLabel.textContent = '$67.00';
+      summaryLabel.textContent = 'Pay TinyOps (Kit)';
+    } else if (item === 'setup-service') {
+      formItemInput.value = 'setup-service';
+      itemTitle.textContent = 'Done-For-You Setup Service';
+      itemPrice.textContent = '$247.00';
+      subtotalVal.textContent = '$247.00';
+      totalVal.textContent = '$247.00';
+      btnPriceLabel.textContent = '$247.00';
+      summaryLabel.textContent = 'Pay TinyOps (Service)';
     } else {
       formItemInput.value = 'client-onboarding';
       itemTitle.textContent = 'Client Onboarding Kit';
@@ -197,6 +226,7 @@
       subtotalVal.textContent = '$67.00';
       totalVal.textContent = '$67.00';
       btnPriceLabel.textContent = '$67.00';
+      summaryLabel.textContent = 'Pay TinyOps (Kit)';
     }
   </script>
 

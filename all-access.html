@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-Access Lifetime Bundle — TinyOps</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#18181B',
+              indigo: '#4F46E5',
+              emerald: '#059669',
+              amber: '#D97706',
+              cream: '#FFFDF9',
+              sand: '#F4F3EF',
+              muted: '#71717A',
+              border: '#E4E4E7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #18181B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border px-6 py-4 sticky top-0 bg-brand-cream/90 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo Wordmark -->
+      <a href="/index.html" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="150" height="44" fill="none">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="/catalog" class="hover:text-brand-ink transition">← Back to Catalog</a>
+        <a href="#kits" class="hover:text-brand-ink transition">Included Kits</a>
+        <a href="#perks" class="hover:text-brand-ink transition">Member Privileges</a>
+        <a href="#pricing" class="hover:text-brand-ink transition font-bold text-brand-indigo">Pricing</a>
+        <a href="#faq" class="hover:text-brand-ink transition">FAQ</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="flex items-center space-x-4">
+        <a href="#pricing" class="bg-brand-indigo text-white hover:bg-brand-indigo/90 transition text-sm font-semibold px-4 py-2 rounded-lg">Get All-Access</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Hero Section -->
+  <section class="px-6 py-16 md:py-24 max-w-6xl mx-auto text-center space-y-8 relative overflow-hidden">
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-indigo/5 rounded-full blur-3xl -z-10"></div>
+    
+    <div class="inline-flex items-center space-x-2 bg-brand-indigo/10 px-4 py-2 rounded-full border border-brand-indigo/20">
+      <span class="text-base">★</span>
+      <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">The Ultimate Automation Suite</span>
+    </div>
+    
+    <div class="space-y-4 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-black text-brand-ink tracking-tight leading-tight">
+        Own Your Whole Operational Stack <span class="text-brand-indigo">For Life</span>.
+      </h1>
+      <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed">
+        Stop buying SaaS tools and individual templates. Lock in lifetime access to **every TinyOps workflow kit** we've built, and every kit we build in the future automatically.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 max-w-md mx-auto">
+      <a href="#pricing" class="w-full sm:flex-1 bg-brand-indigo hover:bg-brand-indigo/95 text-white transition text-center font-bold py-4 rounded-xl text-sm shadow-lg shadow-brand-indigo/15">
+        Unlock All-Access Now
+      </a>
+      <a href="#kits" class="w-full sm:flex-1 bg-brand-cream border border-brand-border hover:bg-brand-sand/50 text-brand-ink transition text-center font-bold py-4 rounded-xl text-sm">
+        Explore Included Kits
+      </a>
+    </div>
+
+    <div class="text-xs text-brand-muted flex items-center justify-center gap-3">
+      <span class="flex items-center gap-1">✓ Unlimited Client Licenses</span>
+      <span class="text-brand-border">|</span>
+      <span class="flex items-center gap-1">🛡️ 30-Day Money-Back Guarantee</span>
+    </div>
+  </section>
+
+  <!-- Included Kits Grid -->
+  <section id="kits" class="bg-brand-sand/30 border-y border-brand-border py-20 px-6">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Product Catalog</span>
+        <h2 class="text-3xl font-extrabold tracking-tight">The TinyOps Kits Blueprint</h2>
+        <p class="text-sm text-brand-muted max-w-md mx-auto">Your membership grants immediate downloads of active kits, plus automatic dashboard delivery of upcoming kits.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Kit 1 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+          <span class="absolute top-4 right-4 text-xs font-bold text-brand-emerald bg-brand-emerald/10 px-2 py-0.5 rounded-full">Active</span>
+          <div class="space-y-4 pt-2">
+            <span class="text-3xl">📥</span>
+            <h3 class="font-bold text-brand-ink text-lg leading-tight">Client Onboarding Kit</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">Automates intake questionnaires, Notion CRM pipeline, proposal generation, and welcome sequences.</p>
+          </div>
+          <a href="/kits/client-onboarding" class="mt-6 text-xs font-bold text-brand-indigo hover:underline flex items-center">View Details <span class="ml-1">→</span></a>
+        </div>
+
+        <!-- Kit 2 -->
+        <div class="bg-brand-cream border border-brand-border rounded-2xl p-6 flex flex-col justify-between shadow-sm relative">
+          <span class="absolute top-4 right-4 text-xs font-bold text-brand-emerald bg-brand-emerald/10 px-2 py-0.5 rounded-full">Active</span>
+          <div class="space-y-4 pt-2">
+            <span class="text-3xl">💰</span>
+            <h3 class="font-bold text-brand-ink text-lg leading-tight">Invoice Follow-Up Kit</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">Automates late-payment reminders (Day 3/7/14), collection escalation, and PDF receipt archiving in Drive.</p>
+          </div>
+          <a href="/kits/invoice-follow-up" class="mt-6 text-xs font-bold text-brand-indigo hover:underline flex items-center">View Details <span class="ml-1">→</span></a>
+        </div>
+
+        <!-- Kit 3 -->
+        <div class="bg-brand-cream/65 border border-brand-border rounded-2xl p-6 flex flex-col justify-between relative">
+          <span class="absolute top-4 right-4 text-[10px] font-bold text-brand-amber bg-brand-amber/10 px-2 py-0.5 rounded-full">Aug 2026</span>
+          <div class="space-y-4 pt-2 opacity-85">
+            <span class="text-3xl">⭐</span>
+            <h3 class="font-bold text-brand-ink text-lg leading-tight">Review Collection Kit</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">Fires Google review invitations upon project completion, featuring a custom filter to isolate negative experiences.</p>
+          </div>
+          <span class="mt-6 text-xs font-semibold text-brand-muted">Releasing Next</span>
+        </div>
+
+        <!-- Kit 4 -->
+        <div class="bg-brand-cream/65 border border-brand-border rounded-2xl p-6 flex flex-col justify-between relative">
+          <span class="absolute top-4 right-4 text-[10px] font-bold text-brand-amber bg-brand-amber/10 px-2 py-0.5 rounded-full">Sep 2026</span>
+          <div class="space-y-4 pt-2 opacity-85">
+            <span class="text-3xl">⚡</span>
+            <h3 class="font-bold text-brand-ink text-lg leading-tight">5-Min Lead Response Kit</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">Instantly shoots personalized emails and text alerts to inbound contact leads, scheduling them on autopilot.</p>
+          </div>
+          <span class="mt-6 text-xs font-semibold text-brand-muted">Releasing Next</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Perks / Privileges -->
+  <section id="perks" class="py-20 max-w-6xl mx-auto px-6 space-y-12">
+    <div class="text-center space-y-3">
+      <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider">Premium Member Privileges</span>
+      <h2 class="text-3xl font-extrabold tracking-tight">What It Means To Go All-Access</h2>
+      <p class="text-sm text-brand-muted max-w-md mx-auto">We don't just sell folders. We deliver a cohesive, high-trust ecosystem to help your business operate flawlessly.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Notion Member Dashboard -->
+      <div class="border border-brand-border rounded-2xl p-8 space-y-4 bg-brand-cream shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-2xl font-bold">📓</div>
+        <h3 class="text-xl font-bold text-brand-ink">Central Notion Member Dashboard</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Get access to a private, central Notion Gateway Hub. From this single dashboard, you can duplicate any of our Notion templates, grab the latest Make.com blueprint codes, read updated documentation, and track your active workflows.
+        </p>
+      </div>
+
+      <!-- Private Slack Community -->
+      <div class="border border-brand-border rounded-2xl p-8 space-y-4 bg-brand-cream shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-2xl font-bold">💬</div>
+        <h3 class="text-xl font-bold text-brand-ink">Private Slack Community</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Join a dedicated, private community workspace of automated small business owners, freelancers, and consultants. Exchange ideas, share custom Notion setups, and ask questions about your automation infrastructure.
+        </p>
+      </div>
+
+      <!-- Priority Support -->
+      <div class="border border-brand-border rounded-2xl p-8 space-y-4 bg-brand-cream shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber flex items-center justify-center text-2xl font-bold">🛠️</div>
+        <h3 class="text-xl font-bold text-brand-ink">12-Hr Priority support</h3>
+        <p class="text-xs text-brand-muted leading-relaxed">
+          Skip the standard support queue. All-Access members receive an exclusive support email address routed directly to our developers, backed by a strict **12-hour response guarantee** to solve any setup hurdles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Matrix Section -->
+  <section id="pricing" class="bg-brand-sand/50 border-t border-brand-border py-20 px-6">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-bold text-brand-indigo uppercase tracking-wider font-mono">Unlock Everything</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Select Your Membership Plan</h2>
+        <p class="text-sm text-brand-muted max-w-md mx-auto">Get instant downloads of all ready-made kits, plus premium member perks. Choose the structure that fits your business model.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-stretch">
+        <!-- Lifetime Card -->
+        <div class="bg-brand-cream border-2 border-brand-indigo rounded-3xl p-8 shadow-md relative flex flex-col justify-between">
+          <div class="absolute -top-3.5 left-6 bg-brand-indigo text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+            Best Value • Most Popular
+          </div>
+          
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-brand-ink">Lifetime Membership</h3>
+              <p class="text-xs text-brand-muted">Buy once, own forever. Zero monthly fees.</p>
+            </div>
+
+            <div class="flex items-baseline space-x-1">
+              <span class="text-5xl font-black text-brand-ink">$297</span>
+              <span class="text-xs text-brand-muted font-bold uppercase">One-Time</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-brand-muted border-t border-brand-border pt-6">
+              <li class="flex items-center gap-2">✓ <strong class="text-brand-ink">Instant access</strong> to all active kits</li>
+              <li class="flex items-center gap-2">✓ <strong class="text-brand-ink">Lifetime access</strong> to all future kits</li>
+              <li class="flex items-center gap-2">✓ Central Notion Member Hub</li>
+              <li class="flex items-center gap-2">✓ Private Slack Community Invite</li>
+              <li class="flex items-center gap-2">✓ 12-Hour Priority Support</li>
+              <li class="flex items-center gap-2">✓ <strong class="text-brand-ink">Save $100</strong> on Setup Services</li>
+            </ul>
+          </div>
+
+          <a href="/checkout?item=all-access&plan=lifetime" class="mt-8 block w-full bg-brand-indigo hover:bg-brand-indigo/95 text-white text-center font-bold py-4 rounded-xl text-sm transition shadow-lg shadow-brand-indigo/15">
+            Secure Lifetime Access ($297)
+          </a>
+        </div>
+
+        <!-- Annual Card -->
+        <div class="bg-brand-cream border border-brand-border rounded-3xl p-8 flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-brand-ink">Annual Membership</h3>
+              <p class="text-xs text-brand-muted">Flexible subscription billed yearly. Cancel anytime.</p>
+            </div>
+
+            <div class="flex items-baseline space-x-1">
+              <span class="text-5xl font-black text-brand-ink">$197</span>
+              <span class="text-xs text-brand-muted font-bold uppercase">/ Year</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-brand-muted border-t border-brand-border pt-6">
+              <li class="flex items-center gap-2">✓ <strong class="text-brand-ink">Instant access</strong> to all active kits</li>
+              <li class="flex items-center gap-2">✓ Access to future kits during subscription</li>
+              <li class="flex items-center gap-2">✓ Central Notion Member Hub</li>
+              <li class="flex items-center gap-2">✓ Private Slack Community Invite</li>
+              <li class="flex items-center gap-2">✓ Standard Developer Support</li>
+              <li class="flex items-center gap-2">✓ Billed annually until cancelled</li>
+            </ul>
+          </div>
+
+          <a href="/checkout?item=all-access&plan=annual" class="mt-8 block w-full bg-brand-sand hover:bg-brand-border/40 text-brand-ink border border-brand-border text-center font-bold py-4 rounded-xl text-sm transition">
+            Join Yearly Membership ($197)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 max-w-3xl mx-auto px-6 space-y-8">
+    <div class="text-center space-y-3">
+      <h2 class="text-2xl font-bold text-brand-ink tracking-tight">Frequently Asked Questions</h2>
+      <p class="text-sm text-brand-muted">Clear answers about our All-Access Bundle.</p>
+    </div>
+
+    <div class="space-y-6 text-sm text-brand-muted divide-y divide-brand-border">
+      <div class="space-y-2 pt-4">
+        <h3 class="font-bold text-brand-ink text-base">Does "Lifetime" actually mean lifetime?</h3>
+        <p class="text-xs leading-relaxed">
+          Yes. A Lifetime purchase guarantees that you will never pay another dollar. You get instant access to our existing Client Onboarding and Invoice Follow-Up kits today, plus every single new automation kit we build in the future, automatically delivered to your dashboard at zero cost.
+        </p>
+      </div>
+
+      <div class="space-y-2 pt-6">
+        <h3 class="font-bold text-brand-ink text-base">Can I upgrade from an individual kit to the Bundle?</h3>
+        <p class="text-xs leading-relaxed">
+          Absolutely. If you purchased an individual kit (like Client Onboarding) for $67, simply shoot us an email at hello@tinyops.com. We will generate a custom credit coupon for you, allowing you to upgrade to All-Access Lifetime for just $230 ($297 - $67).
+        </p>
+      </div>
+
+      <div class="space-y-2 pt-6">
+        <h3 class="font-bold text-brand-ink text-base">How does the automatic future kit delivery work?</h3>
+        <p class="text-xs leading-relaxed">
+          Upon purchase, you will duplicate our central Notion Member Dashboard CRM. When a new workflow kit is finalized, we push the setup instructions, Google template models, and Make.com JSON scenario codes directly to this dashboard. You'll also receive a notification email detailing how to configure the new kit in 15 minutes.
+        </p>
+      </div>
+
+      <div class="space-y-2 pt-6">
+        <h3 class="font-bold text-brand-ink text-base">Can I use these kits for my own clients?</h3>
+        <p class="text-xs leading-relaxed">
+          Yes! The All-Access Bundle includes our **Unlimited Client Agency License**. You are fully permitted to install and connect these blueprints on your clients' Notion and Make.com accounts as part of your service delivery (making it a massive profit center for agencies and consultants). However, you cannot resell the blueprints directly as standalone files.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-brand-sand/30 px-6 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="space-y-4 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="130" height="38" fill="none" class="mx-auto md:mx-0">
+          <g transform="translate(8, 8)">
+            <rect width="48" height="48" rx="12" fill="#18181B"/>
+            <circle cx="24" cy="24" r="12" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 2"/>
+            <circle cx="24" cy="24" r="15" stroke="#E4E4E7" stroke-width="1" opacity="0.3"/>
+            <circle cx="24" cy="9" r="1.8" fill="#E4E4E7"/>
+            <circle cx="24" cy="39" r="1.8" fill="#E4E4E7"/>
+            <circle cx="9" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="39" cy="24" r="1.8" fill="#E4E4E7"/>
+            <circle cx="34.6" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <circle cx="13.4" cy="13.4" r="1.5" fill="#4F46E5"/>
+            <circle cx="34.6" cy="34.6" r="1.5" fill="#4F46E5"/>
+            <path d="M24 13.5C24 19.299 19.299 24 13.5 24C19.299 24 24 28.701 24 34.5C24 28.701 28.701 24 34.5 24C28.701 24 24 19.299 24 13.5Z" fill="#FFFDF9"/>
+          </g>
+          <text x="68" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#18181B" letter-spacing="-0.03em">Tiny</text>
+          <text x="118" y="41" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#4F46E5" letter-spacing="-0.01em">Ops</text>
+        </svg>
+        <p class="text-xs text-brand-muted">
+          Pre-assembled AI workflow kits for small business owners who'd rather work with clients than chase admin.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center md:items-end space-y-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-xs font-semibold text-brand-muted">
+          <span>Have questions? <a href="mailto:hello@tinyops.com" class="text-brand-indigo underline">hello@tinyops.com</a></span>
+          <span class="hidden sm:inline text-brand-border">|</span>
+          <span class="flex items-center text-brand-emerald">
+            🛡️ 30-Day Money-Back Guarantee
+          </span>
+        </div>
+        <p class="text-[10px] text-brand-muted">
+          &copy; 2026 TinyOps. All rights reserved. Notion, Calendly, Make, Stripe, and Google are trademarks of their respective owners.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
